@@ -1,4 +1,4 @@
-# Project Image Filtering and Hybrid Images - Tests on my_imfilter function
+# Homework 1 Image Filtering - Tests on my_imfilter function
 # Based on previous and current work
 # by James Hays for CSCI 1430 @ Brown and
 # CS 4495/6476 @ Georgia Tech

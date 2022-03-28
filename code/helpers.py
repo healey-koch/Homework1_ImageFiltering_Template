@@ -1,4 +1,4 @@
-# Project Image Filtering and Hybrid Images Stencil Code
+# Homework 1 Image Filtering Stencil Code
 # Based on previous and current work
 # by James Hays for CSCI 1430 @ Brown and
 # CS 4495/6476 @ Georgia Tech

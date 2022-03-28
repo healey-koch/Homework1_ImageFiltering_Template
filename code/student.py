@@ -1,4 +1,4 @@
-# Project Image Filtering and Hybrid Images Stencil Code
+# Homework 1 Image Filtering Stencil Code
 # Based on previous and current work
 # by James Hays for CSCI 1430 @ Brown and
 # CS 4495/6476 @ Georgia Tech
@@ -9,7 +9,7 @@ from skimage.transform import rescale
 
 def my_imfilter(image, kernel):
     """
-    Your function should meet the requirements laid out on the project webpage.
+    Your function should meet the requirements laid out on the homework webpage.
     Apply a filter (using kernel) to an image. Return the filtered image. To
     achieve acceptable runtimes, you MUST use numpy multiplication and summation
     when applying the kernel.
@@ -37,7 +37,7 @@ EXTRA CREDIT placeholder function
 def my_imfilter_fft(image, kernel):
     """
     Your function should meet the requirements laid out in the extra credit section on
-    the project webpage. Apply a filter (using kernel) to an image. Return the filtered image.
+    the homework webpage. Apply a filter (using kernel) to an image. Return the filtered image.
     Inputs
     - image: numpy nd-array of dim (m,n) or (m, n, c)
     - kernel: numpy nd-array of dim (k, l)
