@@ -429,25 +429,42 @@ plt.show()
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{Q7:} The coding portion of this homework requires the use of the library \emph{numpy}, which provides fast computation with large multi-dimensional arrays and matrices. Here are some small exercises on basic numpy operations to get you started! Write \emph{one} numpy function to complete each of the following tasks.
+\paragraph{Q7:} The \texttt{numpy} library is extremely important when working with input data (vectors or matrices) and their linear algebra manipulations. In Computer Vision, your data will often come in the form of matrices of images (pixel representations). 
+
+ To familiarize yourself with the library, read through the following scenarios and complete the exercises. Write \emph{one} \texttt{numpy} function to complete each of the following tasks.
 
 Note that numpy is usually imported as
 \begin{verbatim}
     import numpy as np
 \end{verbatim}
 at the top of the code file. You can then call numpy functions with \begin{verbatim}
-    np.function_name()
+    np.function_name(<arguments>)
 \end{verbatim}
 You are encouraged to test out your answers by creating your own python program, importing numpy and calling and printing the results of your solutions! Some numpy functions you might find useful are \href{https://numpy.org/doc/stable/reference/generated/numpy.squeeze.html}{np.squeeze}, \href{https://numpy.org/doc/stable/reference/generated/numpy.expand_dims.html}{np.expand\_dims}, \href{https://numpy.org/doc/stable/reference/generated/numpy.clip.html}{np.clip}, \href{https://numpy.org/doc/stable/reference/generated/numpy.pad.html}{np.pad}, and \href{https://numpy.org/doc/stable/reference/generated/numpy.zeros.html}{np.zeros}.
 
 \begin{enumerate}[a.]
-    \item Create an array of shape (320,640) filled with zeros.
-    \item Given a variable called \emph{img} of shape (1, 1, 320, 640), create a new 2D array variable of shape (320, 640) from \emph{img}, i.e. remove all the 1-sized dimensions.
-    \item Conversely, say you have an array variable \emph{img} of shape (320, 640), create a new 2D array variable of shape (1, 320, 640) from \emph{img}, i.e. add a dimension.
-    \item Clip the image array, \emph{img}, so all its values lie within the range [-0.5, 0.5].
-    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the blue channel of the image while preserving all of \emph{img}'s dimensions and values.
-    \item With an RGB-image array, \emph{img}, of shape (320, 640, 3), retrieve the red and blue channels of the image.
-    \item Pad an \textbf{RGB} (remember, this means the image has 3 channels) image array, \emph{img}, with two zeros on either side of each row (the left and right edges of the image) and 3 zeros values on either side of each column (the tops and bottom edges of the image). Don't add zeros to the front or back (the color channel dimension).
+    \item You're attempting to create a black image base. This will be represented in matrix form by 0s. 
+    
+    Create an array of shape (320,640) filled with zeros.
+    \item You've been working on a Computer Vision pipeline that de-noises your image. Unfortunately, it seems to mess up the dimensions, and outputs an image-array, \texttt{img\_out}, where \texttt{np.shape(img\_out) == (1, 1, 320, 640)}. 
+    
+    Convert \texttt{img\_out} to a new 2D image-array, \texttt{img\_fixed}, where \texttt{np.shape(img\_fixed) == (320, 640)}. In other words, remove all the 1-sized dimensions.
+    \item Usually, image-arrays are represented with three dimensions. The first dimension represents the number of channels, and can be used to identify if an image is RGB or grayscale. 
+    
+    Say you have a grayscale image-array \texttt{img} where \texttt{np.shape(img) == (320, 640)}. Convert this to a new image-array, \texttt{img\_expanded}, which appropriately captures the number of channels, where \texttt{np.shape(img\_expanded) == (1, 320, 640)}. In other words, add a dimension to \texttt{img}.
+    \item When you learn about Convolutional Neural Networks later in the course, you'll find yourself needing to normalize input images such that each channel has intensities ranging from -1 to 1 instead of 0 to 255.
+    
+    Assume you have a linearly normalized grayscale 2D image-array, \texttt{img} (the channel dimension of 1 has already been removed), and want to remove outlier intensities and artefacts (such as glare). Clip \texttt{img} so all its values lie within the range [-0.5, 0.5].
+    \item Let's say you're trying to code a red-green-filter function. This will take in an RGB image-array, \texttt{img}, (this means the image has 3 channels), and filters all but the blue channel. Note that \texttt{np.shape(img) == (320, 640, 3)}.
+    
+    Retrieve the blue channel of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
+    
+    \item Let's say you're trying to code a green-filter function. This will take in an RGB image-array, \texttt{img}, and filters out the green channel. Note that \texttt{np.shape(img) == (320, 640, 3)}. 
+    
+    Retrieve the red and blue channels of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
+    \item Same-Padding is a useful tool to ensure that the dimensions of the output image from a convolution operation matches the dimensions of the input image. 
+    
+    Given an RGB image-array, \texttt{img}, pad it with two columns of zeros on the left and right edges of the image, and three rows of zeros on the top and bottom edges of the image. Don't add zeros to the color channel dimension (the front and back faces of the image-array).
 \end{enumerate}
 
 
