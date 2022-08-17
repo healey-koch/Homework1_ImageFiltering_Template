@@ -212,13 +212,26 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 
 % Please leave the page break
 \pagebreak
-\paragraph{Q5:} Please review the lecture slides on sampling and aliasing, and think about how we might anti-alias with a low-pass filter. Related high-pass filters also exist. For (a--c), which kind of filter does the kernel represent? For (d--e), which filter produced the output images?
+\paragraph{Q5:} You decide to play Minecraft one day, and notice a lot of aliasing. You can identify them as the choppy bits in the distance.
+
+\includegraphics[width=\linewidth]{images/aliased-minecraft.png}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \emph{LaTeX:} To fill in boxes, replace `\textbackslash square' with `\textbackslash blacksquare' for your answer.
 
 \begin{enumerate}[(a)]
+\item Why does this aliasing happen? 
+
+\item
+You decide to fix this by turning anti-aliasing on. Amongst a host of complicated things, this reduces the choppiness of images or render chunks. using low-pass filters (some related high-pass filters also exist).
+
+You decide to do a bit more research into potential filters for anti-aliasing and come across the following three. For each, what kind of filter does the kernel represent?
+
+\includegraphics[width=\linewidth]{images/anti-aliased-minecraft.png}
+
+\begin{enumerate}[(i)]
 \item
  $\begin{bmatrix}
     1 & 0 & -1 \\
@@ -254,7 +267,14 @@ $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+\end{enumerate}
 
+\item
+You think you've gotten a full understanding of how the filters classify, but decide to test if you can recognize which filter has been used to get a target output image. 
+
+For the following images, identify the filter that had been applied.
+
+\begin{enumerate}[(i)]
 \item
 Input image:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img0.png}} \\
@@ -272,6 +292,7 @@ Output image 2:\\
 $\square$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
+\end{enumerate}
 
 \item
 Which of the following statements are true? (Check all that apply).
