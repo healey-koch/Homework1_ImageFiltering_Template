@@ -123,16 +123,34 @@ Please list at least three potential consequences if your project is misused. Wh
 \paragraph{A2:} Your answer here.
 \pagebreak
 
-\paragraph{Q3:} Image convolution, a type of image filtering, is a fundamental image processing tool that you will use repeatedly throughout the course.
+\paragraph{Q3:} You've been given special permission to use the telescope on the room of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking to exposed:
+
+\includegraphics[width=\linewidth]{images/orion-noise.png}
+
+
+Thankfully, there's a way to deal with these artefacts: image convolution. It's a type of image filtering, and is a fundamental image processing tool.
 
 \begin{enumerate}[(a)]
-\item \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences)
+\item \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences). Please be as technical as possible, and don't shy away from using mock variables for the dimensions of any convolution components!
 \begin{enumerate}[(i)]
-    \item input
-    \item transformation (how it happens)
+    \item input (is there just one?)
+    \item transformation (how is the image transformed?)
     \item output
 \end{enumerate}
-\item Why is image convolution important in Computer Vision? Which applications does it allow? (5-10 sentences)
+
+\item Briefly describe at least three different filters you may encounter in image convolution along with an example application. Additionally, what kind of filter would you want to use to process your image of the Orion Nebula? 
+
+\item
+You've successfully cleaned up the image!
+
+\includegraphics[width=\linewidth]{images/orion.JPG}
+
+Now \textit{this} is quite something. But wait, you realize that the image seems... slightly smaller than the original? Thankfully, we can rectify this with padding.
+\begin{enumerate}[(i)]
+    \item Briefly describe at least three different types of padding required on output images post convolution. 
+    \item (Bonus) What kind of padding would you use on your image of the Orion Nebula? (There's no right answer, but please justify!)
+\end{enumerate}
+
 \end{enumerate}
 
 
