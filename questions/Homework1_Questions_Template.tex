@@ -24,8 +24,8 @@
 
 % How to include two graphics on the same line:
 %
-% \includegraphics[width=0.49\linewidth]{yourgraphic1.png}
-% \includegraphics[width=0.49\linewidth]{yourgraphic2.png}
+% \includegraphics[width=0.49\textwidth * 7/10]{yourgraphic1.png}
+% \includegraphics[width=0.49\textwidth * 7/10]{yourgraphic2.png}
 %
 % How to include equations:
 %
@@ -98,15 +98,19 @@ should be on this page
 \vspace{-3cm}
 \thispagestyle{fancy}
 
-\section*{Instructions}
+\section*{ Document Instructions}
 \begin{itemize}
   \item 2 ethical implications questions, which will be expanded on in discussion sections.
   \item 5 technical questions.
+  \item Fill all your answers within the answer boxes, and \textbf{please do NOT remove the answer box outlines}.
   \item Include code, images, and equations where appropriate.
   \item Please make this document anonymous.
+\end{itemize}
+
+\section*{ Gradescope Instructions}
+\begin{itemize}
   \item When you are finished, compile this document to a PDF and submit it directly to Gradescope. 
-  \item This assignment is \textbf{fixed length}, and the pages have been assigned for you in Gradescope. As a result, \textbf{please do NOT add any new pages}. We will provide ample room for you to answer the questions. If you \emph{really} wish for more space, please add a page \emph{at the end of the document}.
-  \item \textbf{We do NOT expect you to fill up each page with your answer.} Some answers will only be a few sentences long, and that is okay.
+  \item You will be required to assign the appropriate answers to the right pages on Gradescope. \textbf{Failure to assign pages correctly will lead to a deduction of between 2 and 5 points depending on the severity of the mismatch.}
 \end{itemize}
 \pagebreak
 
@@ -123,9 +127,9 @@ Please list at least three potential consequences if your project is misused. Wh
 \paragraph{A2:} Your answer here.
 \pagebreak
 
-\paragraph{Q3:} You've been given special permission to use the telescope on the room of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking to exposed:
+\paragraph{Q3:} You've been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking too exposed:
 
-\includegraphics[width=\linewidth]{images/orion-noise.png}
+\includegraphics[width=\textwidth * 7/10]{images/orion-noise.png}
 
 
 Thankfully, there's a way to deal with these artefacts: image convolution. It's a type of image filtering, and is a fundamental image processing tool.
@@ -134,42 +138,84 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
 \item \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences). Please be as technical as possible, and don't shy away from using mock variables for the dimensions of any convolution components!
 \begin{enumerate}[(i)]
     \item input (is there just one?)
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) (i) here
+    }}
+    
     \item transformation (how is the image transformed?)
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) (ii) here
+    }}
+    
     \item output
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) (iii) here
+    }}
+    
 \end{enumerate}
 
 \item Briefly describe at least three different filters you may encounter in image convolution along with an example application. Additionally, what kind of filter would you want to use to process your image of the Orion Nebula? 
 
+\fbox{\parbox{\linewidth}{
+        TODO: Your answer for (b) here
+    }}
+
 \item
 You've successfully cleaned up the image!
 
-\includegraphics[width=\linewidth]{images/orion.JPG}
+\includegraphics[width=\textwidth * 7/10]{images/orion.JPG}
 
 Now \textit{this} is quite something. But wait, you realize that the image seems... slightly smaller than the original? Thankfully, we can rectify this with padding.
 \begin{enumerate}[(i)]
     \item Briefly describe at least three different types of padding required on output images post convolution. 
+
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (c) (i) here
+    }}
+
     \item (Bonus) What kind of padding would you use on your image of the Orion Nebula? (There's no right answer, but please justify!)
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (c) (ii) here
+    }}
 \end{enumerate}
 
 \end{enumerate}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
-\paragraph{A3:} Your answer here.
-% Uncomment the stencil below and fill in your solution.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagebreak
+% \paragraph{A3:} Your answer here.
+% % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
 % \item
 % \begin{enumerate}[(i)]
 %     \item
+%     \fbox{\parbox{\linewidth}{
+%         TODO: Your answer for (a) (i) here
+%     }}
 %     \item
+%     \fbox{\parbox{\linewidth}{
+%         TODO: Your answer for (a) (ii) here
+%     }}
 %     \item
+%     \fbox{\parbox{\linewidth}{
+%         TODO: Your answer for (a) (iii) here
+%     }}
 % \end{enumerate}
 % \item
+% \item
+% \begin{enumerate}[(i)]
+%     \item
+%     \item (Bonus)
+% \end{enumerate}
 % \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Please leave the pagebreak
 \pagebreak
@@ -180,7 +226,15 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 \begin{enumerate}[(a)]
     \item Comment on the difference between convolution and correlation, including their properties. 
     
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) here
+    }}
+    
     \item You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? (3-5 sentences)
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (b) here
+    }}
 
     \item
     You decide to solidify your understanding of the distinction between correlation and convolution by taking another image.
@@ -192,29 +246,31 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     Specify your kernel, and provide the input image and output results. Then, use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
 
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (c) here
+    }}
 
 \end{enumerate}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{A4:} Your answer here.
-% Uncomment the stencil below and fill in your solution.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \paragraph{A4:} Your answer here.
+% % Uncomment the stencil below and fill in your solution.
 
 % \begin{enumerate}[(a)]
-
 % \item
-
 % \item
-
+% \item
 % \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Please leave the page break
 \pagebreak
 \paragraph{Q5:} You decide to play Minecraft one day, and notice a lot of aliasing. You can identify them as the choppy bits in the distance.
 
-\includegraphics[width=\linewidth]{images/aliased-minecraft.png}
+\includegraphics[width=\textwidth * 7/10]{images/aliased-minecraft.png}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,12 +280,16 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 \begin{enumerate}[(a)]
 \item Why does this aliasing happen? 
 
+\fbox{\parbox{\linewidth}{
+    TODO: Your answer for (a) here
+}}
+
 \item
-You decide to fix this by turning anti-aliasing on. Amongst a host of complicated things, this reduces the choppiness of images or render chunks. using low-pass filters (some related high-pass filters also exist).
+You decide to fix this by turning anti-aliasing on. Amongst a host of complicated things, this reduces the choppiness of images or render chunks using low-pass filters (some related high-pass filters also exist):
 
-You decide to do a bit more research into potential filters for anti-aliasing and come across the following three. For each, what kind of filter does the kernel represent?
+\includegraphics[width=\textwidth * 7/10]{images/anti-aliased-minecraft.png}
 
-\includegraphics[width=\linewidth]{images/anti-aliased-minecraft.png}
+To understand anti-aliasing filters better, classify each of the following filters:
 
 \begin{enumerate}[(i)]
 \item
@@ -272,14 +332,13 @@ $\square$ & Neither \\
 \item
 You think you've gotten a full understanding of how the filters classify, but decide to test if you can recognize which filter has been used to get a target output image. 
 
-For the following images, identify the filter that had been applied.
+Given the following input image, identify the filter that has been applied:\\
+\raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 7/10]{images/q3img0.png}} \\
 
 \begin{enumerate}[(i)]
 \item
-Input image:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img0.png}} \\
 Output image 1:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img1.png}}
+\raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 7/10]{images/q3img1.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
@@ -287,7 +346,7 @@ $\square$ & Low pass \\
 
 \item
 Output image 2:\\
-\raisebox{\baselineskip-\height}{\includegraphics[width = 6cm]{images/q3img2.png}}
+\raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 7/10]{images/q3img2.png}}
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
@@ -318,6 +377,9 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
     It is very important to understand how convolution/correlation scale with input size. A good measure of scale is measuring how the computation times of such filtering operations varies with filter sizes.
     
     To make an accurate assessment on this computational scaling, we will be using filters with dimensions $n \times n$ where $n$ is an odd number and $n \in [3, 15]$ (i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and images of sizes between 0.25 to 8 megapixels.
+    
+    \begin{enumerate}[(i)]
+    \item
     
     Complete the stencil code below to create a graph with one trace per filter size, where the x-axis represents the correlation/convolution between an image size, and y-axis represents the time to convolve/correlate that image.
 
@@ -407,27 +469,40 @@ plt.legend(title="filter sizes (pixels)")
 plt.show()
 
 \end{python}
-
-    Additionally, present your graph with a brief description of what your graph demonstrates.
+    
+    
+    \item
+    Present your graph with a brief description of what your graph demonstrates.
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) (ii) here
+    }}
+    
+    \end{enumerate}
 
 \item
     Do the results match your expectation given the number of multiply and add operations in convolution? (3-5 sentences)
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (b) here
+    }}
+    
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
-\paragraph{A6:} Your graph and answer here.
-% Uncomment the stencil below and fill in your solution.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagebreak
+% \paragraph{A6:} Your graph and answer here.
+% % Uncomment the stencil below and fill in your solution.
 
-% \begin{enumerate}[(a)]
+% % \begin{enumerate}[(a)]
 
-% \item Add your graph as well as a brief description of what your graph demonstrates.
+% % \item Add your graph as well as a brief description of what your graph demonstrates.
 
-% \item Do the results match your expectation given the number of multiply and add operations in convolution?
+% % \item Do the results match your expectation given the number of multiply and add operations in convolution?
 
-% \end{enumerate}
+% % \end{enumerate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \paragraph{Q7:} The \texttt{numpy} library is extremely important when working with input data (vectors or matrices) and their linear algebra manipulations. In Computer Vision, your data will often come in the form of matrices of images (pixel representations). 
 
@@ -442,49 +517,85 @@ at the top of the code file. You can then call numpy functions with \begin{verba
 \end{verbatim}
 You are encouraged to test out your answers by creating your own python program, importing numpy and calling and printing the results of your solutions! Some numpy functions you might find useful are \href{https://numpy.org/doc/stable/reference/generated/numpy.squeeze.html}{np.squeeze}, \href{https://numpy.org/doc/stable/reference/generated/numpy.expand_dims.html}{np.expand\_dims}, \href{https://numpy.org/doc/stable/reference/generated/numpy.clip.html}{np.clip}, \href{https://numpy.org/doc/stable/reference/generated/numpy.pad.html}{np.pad}, and \href{https://numpy.org/doc/stable/reference/generated/numpy.zeros.html}{np.zeros}.
 
-\begin{enumerate}[a.]
-    \item You're attempting to create a black image base. This will be represented in matrix form by 0s. 
+You may also use operators like \texttt{[]} and \texttt{:}, but remember to use only \textit{one} function/operator shorthand.
+
+\begin{enumerate}[(a)]
+    \item You're attempting to create a black image base, \texttt{img}. All values in this matrix are 0. 
     
-    Create an array of shape (320,640) filled with zeros.
+    Create \texttt{img} where \texttt{np.shape(img) == (320,640)}.
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (a) here
+    }}
+    
     \item You've been working on a Computer Vision pipeline that de-noises your image. Unfortunately, it seems to mess up the dimensions, and outputs an image-array, \texttt{img\_out}, where \texttt{np.shape(img\_out) == (1, 1, 320, 640)}. 
     
     Convert \texttt{img\_out} to a new 2D image-array, \texttt{img\_fixed}, where \texttt{np.shape(img\_fixed) == (320, 640)}. In other words, remove all the 1-sized dimensions.
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (b) here
+    }}
+    
     \item Usually, image-arrays are represented with three dimensions. The first dimension represents the number of channels, and can be used to identify if an image is RGB or grayscale. 
     
     Say you have a grayscale image-array \texttt{img} where \texttt{np.shape(img) == (320, 640)}. Convert this to a new image-array, \texttt{img\_expanded}, which appropriately captures the number of channels, where \texttt{np.shape(img\_expanded) == (1, 320, 640)}. In other words, add a dimension to \texttt{img}.
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (c) here
+    }}
+    
     \item When you learn about Convolutional Neural Networks later in the course, you'll find yourself needing to normalize input images such that each channel has intensities ranging from -1 to 1 instead of 0 to 255.
     
     Assume you have a linearly normalized grayscale 2D image-array, \texttt{img} (the channel dimension of 1 has already been removed), and want to remove outlier intensities and artefacts (such as glare). Clip \texttt{img} so all its values lie within the range [-0.5, 0.5].
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (d) here
+    }}
+    
     \item Let's say you're trying to code a red-green-filter function. This will take in an RGB image-array, \texttt{img}, (this means the image has 3 channels), and filters all but the blue channel. Note that \texttt{np.shape(img) == (320, 640, 3)}.
     
     Retrieve the blue channel of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
     
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (e) here
+    }}
+    
     \item Let's say you're trying to code a green-filter function. This will take in an RGB image-array, \texttt{img}, and filters out the green channel. Note that \texttt{np.shape(img) == (320, 640, 3)}. 
     
     Retrieve the red and blue channels of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (f) here
+    }}
+    
     \item Same-Padding is a useful tool to ensure that the dimensions of the output image from a convolution operation matches the dimensions of the input image. 
     
     Given an RGB image-array, \texttt{img}, pad it with two columns of zeros on the left and right edges of the image, and three rows of zeros on the top and bottom edges of the image. Don't add zeros to the color channel dimension (the front and back faces of the image-array).
+    
+    \fbox{\parbox{\linewidth}{
+        TODO: Your answer for (g) here
+    }}
+    
 \end{enumerate}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
-\paragraph{A7:} Your answer here. Remember, write \emph{one} numpy function to complete each of the tasks---this includes operators like [] and :.
-%  Uncomment the stencil below and fill in your solution.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagebreak
+% \paragraph{A7:} Your answer here. Remember, write \emph{one} numpy function to complete each of the tasks---this includes operators like [] and :.
+% %  Uncomment the stencil below and fill in your solution.
 
-% \begin{enumerate}[(a)]
-% \item
-% \item
-% \item
-% \item
-% \item
-% \item
-% \item
-% \end{enumerate}
+% % \begin{enumerate}[(a)]
+% % \item
+% % \item
+% % \item
+% % \item
+% % \item
+% % \item
+% % \item
+% % \end{enumerate}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Please leave the pagebreak
 %% any suggestions for more?
 \pagebreak
