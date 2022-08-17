@@ -173,13 +173,23 @@ Now \textit{this} is quite something. But wait, you realize that the image seems
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q4:} Correlation and convolution are both filtering operations we can perform to extract information from images.
+\paragraph{Q4:} Now that you've successfully used convolution to de-noise your image of the Orion nebula, you decide to explore the filtering technique more closely. 
+
+Specifically, you know two filtering operations exist: correlation and convolution. Both techniques extract (or delete) information from images.
+
 \begin{enumerate}[(a)]
-    \item
-    What is the difference between convolution and correlation? (3-5 sentences)
+    \item Comment on the difference between convolution and correlation, including their properties. 
+    
+    \item You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? (3-5 sentences)
 
     \item
-    Construct a scenario which produces a different output between both operations. Include the kernel you used and your image results. Use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
+    You decide to solidify your understanding of the distinction between correlation and convolution by taking another image.
+    
+    For this, come up with a use case where the output of correlation and convolution differ.
+    
+    Write some code that takes an image and produces two distinct images, one from convolution and one from correlation on some kernel of your choice. 
+    
+    Specify your kernel, and provide the input image and output results. Then, use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
 
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
 
