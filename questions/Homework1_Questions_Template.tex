@@ -125,9 +125,12 @@
 
 Do you think we've reached this point and why? What manipulations do you think are permissible for an image to be genuine, if any? Based on this, please list at least three potential solutions (scientific, journalistic, legal, etc.) to address mistrust in photographic media. [6-7 sentences]
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \begin{mdframed}
     TODO: Your answer here
 \end{mdframed}
+\end{tcolorbox}
 
 
 \pagebreak
@@ -137,9 +140,11 @@ Do you think we've reached this point and why? What manipulations do you think a
 Please list at least three potential consequences if your project is misused. What are three things that could be done (scientifically, legally, etc.) to try and avoid these problems? [5-6 sentences]
 \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \begin{mdframed}
         TODO: Your answer here
     \end{mdframed}
+\end{tcolorbox}
 
 \pagebreak
 
@@ -158,21 +163,25 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
 \end{tcolorbox}
 \begin{enumerate}[(i)]
     \item \textbf{[2 points]} input (is there just one?) 
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) (i) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[2 points]} transformation (how is the image transformed?) 
-
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) (ii) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[2 points]} output
-    
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) (iii) here
     \end{mdframed}
+\end{tcolorbox}
     
 \end{enumerate}
 
@@ -182,9 +191,11 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
 Briefly describe at least three different filters you may encounter in image convolution along with an example application for each. Additionally, what kind of filter would you want to use to process your image of the Orion Nebula? 
 \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \begin{mdframed}
     TODO: Your answer for (b) here
 \end{mdframed}
+\end{tcolorbox}
 
 
 % \item
@@ -258,9 +269,11 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     Comment on the difference between convolution and correlation, including their properties. 
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) here
     \end{mdframed}
+\end{tcolorbox}
     
 
     \item \textbf{[1 + 1 points]} 
@@ -268,9 +281,11 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? (3-5 sentences)
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (b) here
     \end{mdframed}
+\end{tcolorbox}
 
     \item \textbf{[2 + 2 points]}
     You decide to solidify your understanding of the distinction between correlation and convolution by taking another image.
@@ -286,14 +301,15 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
     
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \includegraphics[width=\textwidth * 5/10]{TODO: original-img.png}\\
     \includegraphics[width=\textwidth * 5/10]{TODO: convolved-img.png}
     \includegraphics[width=\textwidth * 5/10]{TODO: correlated-img.png}
     
-
     \begin{mdframed}
         TODO: Your answer for (c) here
     \end{mdframed}
+\end{tcolorbox}
 
 \end{enumerate}
 
@@ -330,10 +346,11 @@ After a heavy analysis, you decide the castle is in decent shape. As such, you n
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
 This phenomena is called aliasing, but why has it happened?
 \end{tcolorbox}
-
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \begin{mdframed}
     TODO: Your answer for (a) here
 \end{mdframed}
+\end{tcolorbox}
 
 \item \textbf{[3 points]}
 You decide to fix this by passing your image through an anti-aliaser online. Amongst a host of complicated things, the software reduces the 'choppiness' of the image using low-pass filter convolution (some related high-pass filters also exist):
@@ -351,11 +368,15 @@ Let's make sure we fully understand how this works though. Can you identify whic
     1 & 0 & -1 \\
     1 & 0 & -1 \\
  \end{bmatrix}$
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select the appropriate answer.
+
 \begin{tabular}[h]{ll}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+\end{tcolorbox}
 
 \item
  $\begin{bmatrix}
@@ -363,11 +384,15 @@ $\square$ & Neither \\
     \frac{1}{9} & \frac{1}{9} & \frac{1}{9} \\
     \frac{1}{9} & \frac{1}{9} & \frac{1}{9}
  \end{bmatrix}$
+ \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select the appropriate answer.
+
 \begin{tabular}[h]{ll}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+\end{tcolorbox}
 
 \item
 $\begin{bmatrix}
@@ -375,11 +400,15 @@ $\begin{bmatrix}
     -\frac{1}{9} & \frac{8}{9} & -\frac{1}{9} \\
     -\frac{1}{9} & -\frac{1}{9} & -\frac{1}{9}
   \end{bmatrix}$
+  \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select the appropriate answer.
+
 \begin{tabular}[h]{ll}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+\end{tcolorbox}
 \end{enumerate}
 
 \item \textbf{[2 points]}
@@ -395,18 +424,26 @@ Given the input image below, identify the filter that has been applied.
 \item
 Output image 1:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 5/10]{images/q3img1.png}}
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select the appropriate answer.
+
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
+\end{tcolorbox}
 
 \item
 Output image 2:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 5/10]{images/q3img2.png}}
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select the appropriate answer.
+
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
+\end{tcolorbox}
 \end{enumerate}
 
 \item \textbf{[2 points]}
@@ -414,12 +451,16 @@ $\square$ & Low pass \\
 Which of the following statements are true? (Check all that apply).
 \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+TODO: Select all that apply.
+
 \begin{tabular}[h]{ll}
 $\square$ & High pass filter kernels will always contain at least one negative number \\
 $\square$ & A Gaussian filter is an example of a low pass filter \\
 $\square$ & A high pass filter is the basis for most smoothing methods \\
 $\square$ & In a high pass filter, the center of the kernel must have the highest value \\
 \end{tabular}
+\end{tcolorbox}
 
 \end{enumerate}
 
@@ -455,6 +496,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black]
 \begin{python}
 import time
 import matplotlib.pyplot as plt
@@ -529,6 +571,7 @@ plt.legend(title="filter sizes (pixels)")
 plt.show()
 
 \end{python}
+\end{tcolorbox}
     
     
     \item \textbf{[2 points]}
@@ -536,9 +579,11 @@ plt.show()
     Present your graph with a brief description of what your graph demonstrates.
     \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) (ii) here
     \end{mdframed}
+\end{tcolorbox}
     
 
 \item \textbf{[2 points]} 
@@ -546,9 +591,11 @@ plt.show()
 Do the results match your expectation given the number of multiply and add operations in convolution? (3-5 sentences)
 \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (b) here
     \end{mdframed}
+\end{tcolorbox}
     
 \end{enumerate}
 
@@ -589,9 +636,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Create \texttt{img} where \texttt{np.shape(img) == (320,640)}.
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (a) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} You've been working on a Computer Vision pipeline that de-noises your image. Unfortunately, it seems to mess up the dimensions, and outputs an image-array, \texttt{img\_out}, where \texttt{np.shape(img\_out) == (1, 1, 320, 640)}. 
     
@@ -599,9 +648,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Convert \texttt{img\_out} to a new 2D image-array, \texttt{img\_fixed}, where \texttt{np.shape(img\_fixed) == (320, 640)}. In other words, remove all the 1-sized dimensions.
     \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (b) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} Usually, image-arrays are represented with three dimensions. The first dimension represents the number of channels, and can be used to identify if an image is RGB or grayscale. 
     
@@ -609,9 +660,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Say you have a grayscale image-array \texttt{img} where \texttt{np.shape(img) == (320, 640)}. Convert this to a new image-array, \texttt{img\_expanded}, which appropriately captures the number of channels, where \texttt{np.shape(img\_expanded) == (1, 320, 640)}. In other words, add a dimension to \texttt{img}.
     \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (c) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} When you learn about Convolutional Neural Networks later in the course, you'll find yourself needing to normalize input images such that each channel has intensities ranging from -1 to 1 instead of 0 to 255.
     
@@ -619,9 +672,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Assume you have a linearly normalized grayscale 2D image-array, \texttt{img} (the channel dimension of 1 has already been removed), and want to remove outlier intensities and artefacts (such as glare). Clip \texttt{img} so all its values lie within the range [-0.5, 0.5].
     \end{tcolorbox}
 
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (d) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} Let's say you're trying to code a red-green-filter function. This will take in an RGB image-array, \texttt{img}, (this means the image has 3 channels), and filters all but the blue channel. Note that \texttt{np.shape(img) == (320, 640, 3)}.
     
@@ -629,9 +684,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Retrieve the blue channel of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (e) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} Let's say you're trying to code a green-filter function. This will take in an RGB image-array, \texttt{img}, and filters out the green channel. Note that \texttt{np.shape(img) == (320, 640, 3)}. 
     
@@ -639,9 +696,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Retrieve the red and blue channels of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (f) here
     \end{mdframed}
+\end{tcolorbox}
     
     \item \textbf{[1 point]} Same-Padding is a useful tool to ensure that the dimensions of the output image from a convolution operation matches the dimensions of the input image. 
     
@@ -649,9 +708,11 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     Given an RGB image-array, \texttt{img}, pad it with two columns of zeros on the left and right edges of the image, and three rows of zeros on the top and bottom edges of the image. Don't add zeros to the color channel dimension (the front and back faces of the image-array).
     \end{tcolorbox}
     
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \begin{mdframed}
         TODO: Your answer for (g) here
     \end{mdframed}
+\end{tcolorbox}
     
 \end{enumerate}
 
