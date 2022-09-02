@@ -58,32 +58,35 @@
 \fancyhf{}
 \lhead{Homework 1 Written Questions}
 \rhead{CSCI 1430}
-\lfoot{\textcolor{red}{Only
+\lfoot{\textcolor{red}{\textbf{Only}
 \ifcase\thepage
-\or instructions
-\or A1
-\or A2
-\or A3 (a)
-\or A3 (b) - (c)
-\or A4 (a) - (b)
-\or A4 (c)
-\or A5 (a)
-\or A5 (b)
-\or A5 (c) - (d)
-\or A6 (a)
-\or A6 (a)
-\or A6 (a)
-\or A6 (b) - (c)
-\or A7 (a) - (b)
-\or A7 (c) - (e)
-\or A7 (f) - (g)
-\or feedback
+\or \textbf{instructions}
+\or \textbf{A1 (a)}
+\or \textbf{A1 (b) - (c)}
+\or \textbf{A1 (d)}
+\or \textbf{A2 (a) - (b)}
+\or \textbf{A2 (c)}
+\or \textbf{A2 (d)}
+\or \textbf{A3 (a)}
+\or \textbf{A3 (b)}
+\or \textbf{A3 (c)}
+\or \textbf{A3 (d)}
+\or \textbf{A3 (e)}
+\or \textbf{A4 (a)}
+\or \textbf{A4 (a)}
+\or \textbf{A4 (a)}
+\or \textbf{A4 (b) - (c)}
+\or \textbf{A5 (a) - (b)}
+\or \textbf{A5 (c) - (e)}
+\or \textbf{A5 (f) - (g)}
+\or \textbf{discussion attendance}
+\or \textbf{feedback}
 \else
-[ERROR: PAGE MISALIGNMENT]
+\textbf{[ERROR: PAGE MISALIGNMENT]}
 \fi
-should be on this page
+\textbf{should be on this page}
 }}
-\rfoot{\thepage~/ 18}
+\rfoot{\thepage~/ 20}
 
 
 \date{}
@@ -98,7 +101,7 @@ should be on this page
 
 \section*{ Document Instructions}
 \begin{itemize}
-  \item 7 questions \textbf{[5 + 5 + 13 + 8 + 9 + 7 + 7 = 54 + 1 bonus points]}.
+  \item 5 questions \textbf{[13 + 11 + 12 + 7 + 7 = 50 + 3 bonus points]}.
   \item Fill all your answers within the answer boxes, and \textbf{please do NOT remove the answer box outlines}.
   \item Questions are highlighted in the \textbf{orange boxes}, bonus questions are highlighted in \textbf{blue boxes}, answers should be recorded in the \textbf{green boxes}.
   \item Include code, images, and equations where appropriate.
@@ -116,43 +119,7 @@ should be on this page
 
 \pagebreak
 
-\paragraph{Q1:} \textbf{[5 points]} Hybrid images appear as normal images until the viewer changes distance; they blur the line between authentic and inauthentic. As technology advances, evaluating authenticity becomes increasingly difficult. In 1990, \emph{New York Times} photography critic Andy Grundberg \href{https://www.nytimes.com/1990/08/12/arts/photography-view-ask-it-no-questions-the-camera-can-lie.html}{stated that:} "In the future, readers of newspapers and magazines will probably view news pictures more as illustrations than as reportage, since they can no longer distinguish between a genuine image and one that has been manipulated.''
-
-\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-
-Do you think we've reached this point and why? What manipulations do you think are permissible for an image to be genuine, if any? Based on this, please list at least three potential solutions (scientific, journalistic, legal, etc.) to address mistrust in photographic media. \textbf{[6-7 sentences]}
-\end{tcolorbox}
-
-\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black]
-    \setbox0=\hbox{\parbox[t]{\textwidth}{
-            
-    TODO: Your answer for here
-
-    }}
-    \clipbox{0pt \dimexpr\dp0-9\baselineskip\relax{} 0in 0pt}{\copy0}
-\end{tcolorbox}
-
-
-\pagebreak
-\paragraph{Q2:} \textbf{[5 points]} For your CS1430 final project, you decide to build an \href{https://respeecher.medium.com/what-is-synthetic-film-dubbing-ai-deepfake-technology-explained-9f6118532e8c}{AI dubbing program} that can alter an actor's lip movements to make film dubbing more effective. Your project is successful, and creates perfect videos that could depict anyone appearing to say anything.
-
-\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Please list at least three potential consequences if your project is misused. What are three things that could be done (scientifically, legally, etc.) to try and avoid these problems? \textbf{[6-7 sentences]}
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-\setbox0=\hbox{\parbox[t]{\textwidth}{
-        
-TODO: Your answer for here
-
-}}
-\clipbox{0pt \dimexpr\dp0-9\baselineskip\relax{} 0in 0pt}{\copy0}
-\end{tcolorbox}
-
-\pagebreak
-
-
-\paragraph{Q3:} \textbf{[13 + 1 bonus points]} You've been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking too exposed:
+\paragraph{Q1:} \textbf{[13 + 1 bonus points]} You've been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking too exposed:
 
 \includegraphics[width=\textwidth * 5/10]{images/orion-noise.png}
 
@@ -168,9 +135,11 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
     \item \textbf{[2 points]} input (is there just one?) \textbf{[3-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
+        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         TODO: Your answer for (a) (i) here
         
+        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -178,9 +147,11 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
     \item \textbf{[2 points]} transformation (how is the image transformed?) \textbf{[3-4 sentences]} 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
+        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         TODO: Your answer for (a) (ii) here
         
+        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -188,9 +159,11 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
     \item \textbf{[2 points]} output \textbf{[3-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
+        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         TODO: Your answer for (a) (iii) here
         
+        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -205,9 +178,11 @@ Briefly describe at least three different filters you may encounter in image con
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
+        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         TODO: Your answer for (b) here
         
+        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -218,25 +193,29 @@ What kind of filter would you want to use to process your image of the Orion Neb
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
+        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (b) here
+        TODO: Your answer for (c) here
         
+        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-3\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
+\pagebreak
+
 \item \textbf{[5 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Why is image convolution important in Computer Vision? Which applications does it allow? \textbf{[7-8 sentences]}
+Why is image convolution important in Computer Vision? Which applications does it allow? What are some applications in which it could be misused? \textbf{[8-10 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
 
-TODO: Your answer for (c) here
+TODO: Your answer for (d) here
 
 }}
-\clipbox{0pt \dimexpr\dp0-11\baselineskip\relax{} 0in 0pt}{\copy0}
+\clipbox{0pt \dimexpr\dp0-13\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
 \end{enumerate}
@@ -245,11 +224,28 @@ TODO: Your answer for (c) here
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q4:} \textbf{[8 points]} Now that you've successfully used convolution to de-noise your image of the Orion nebula, you decide to explore the filtering technique more closely. 
+\paragraph{Q2:} \textbf{[11 points]} Now that you've successfully used convolution to de-noise your image of the Orion nebula, you decide to explore the filtering technique more closely. 
 
 Specifically, you know two filtering operations exist: correlation and convolution. Both techniques extract (or delete) information from images.
 
 \begin{enumerate}[(a)]
+
+    \item \textbf{[3 points]} 
+    \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+    In what ways can extraction of information from images be helpful or beneficial? What about deletion of information? Discuss this both in the context of your image of the Orion nebula and other real-life examples. \textbf{[5-6 sentences]}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    TODO: Your answer for (a) here
+    
+    %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    }}
+    \clipbox{0pt \dimexpr\dp0-8\baselineskip\relax{} 0in 0pt}{\copy0}
+\end{tcolorbox}
+
     \item \textbf{[2 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
     Comment on the difference between convolution and correlation, including their properties. \textbf{[5 - 6 sentences]}
@@ -257,14 +253,16 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
+    %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (a) here
+    TODO: Your answer for (b) here
     
+    %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
     \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
-    
 
+    \pagebreak
     \item \textbf{[1 + 1 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
     You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? \textbf{[4-5 sentences]}
@@ -272,13 +270,16 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
+    %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    TODO: Your answer for (b) here
+    TODO: Your answer for (c) here
     
+    %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
     \clipbox{0pt \dimexpr\dp0-5\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
+    \pagebreak
     \item \textbf{[2 + 2 points]}
     You decide to solidify your understanding of the distinction between correlation and convolution by taking another image.
     
@@ -299,9 +300,11 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     \includegraphics[width=\textwidth * 5/10]{TODO: correlated-img.png}
     
     \setbox0=\hbox{\parbox[t]{\textwidth}{
+    %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (c) here
+    TODO: Your answer for (d) here
     
+    %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
     \clipbox{0pt \dimexpr\dp0-5\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -313,7 +316,7 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 % Please leave the page break
 \pagebreak
 
-\paragraph{Q5:} \textbf{[9 points]} You're a restoration architect who's in charge of determining when heritage site structures need a bit of upkeeping due to weather, erosion or other factors (natural and tourism-caused). This week, you've been assigned to visit a castle on a beautiful seafront to see if any restoration is in order.
+\paragraph{Q3:} \textbf{[12 points]} You're a restoration architect who's in charge of determining when heritage site structures need a bit of upkeeping due to weather, erosion or other factors (natural and tourism-caused). This week, you've been assigned to visit a castle on a beautiful seafront to see if any restoration is in order.
 
 After a heavy analysis, you decide the castle is in decent shape. As such, you need to convince your superior, so you snap a picture of the castle with your camera:
 
@@ -322,19 +325,19 @@ After a heavy analysis, you decide the castle is in decent shape. As such, you n
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \emph{LaTeX:} To fill in boxes, replace `\textbackslash square' with `\textbackslash blacksquare' for your answer.
-
 \begin{enumerate}[(a)]
-\item \textbf{[2 points]} Oh no! Looks like there are some weird artefacts on the image, almost as though the walls are bleeding color? 
+\item \textbf{[2 points]} Oh no! Looks like there are some weird artifacts on the image, almost as though the walls are bleeding color? 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
 This phenomena is called aliasing, but why has it happened? \textbf{[5 - 6 sentences]}
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 TODO: Your answer for (a) here
 
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }}
 \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
@@ -348,6 +351,8 @@ You decide to fix this by passing your image through an anti-aliaser online. Amo
 Let's make sure we fully understand how this works though. Can you identify which of the following filters is high pass or low pass?
 \end{tcolorbox}
 
+\emph{Note:} To fill in boxes, replace `\textbackslash square' with `\textbackslash blacksquare' for your answer.
+
 \begin{enumerate}[(i)]
 \item
  $\begin{bmatrix}
@@ -356,6 +361,7 @@ Let's make sure we fully understand how this works though. Can you identify whic
     1 & 0 & -1 \\
  \end{bmatrix}$
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TODO: Select the appropriate answer.
 
 \begin{tabular}[h]{ll}
@@ -363,6 +369,8 @@ $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
 
 \item
@@ -372,6 +380,8 @@ $\square$ & Neither \\
     \frac{1}{9} & \frac{1}{9} & \frac{1}{9}
  \end{bmatrix}$
  \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TODO: Select the appropriate answer.
 
 \begin{tabular}[h]{ll}
@@ -379,6 +389,10 @@ $\square$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
+
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
 
 \item
@@ -388,6 +402,7 @@ $\begin{bmatrix}
     -\frac{1}{9} & -\frac{1}{9} & -\frac{1}{9}
   \end{bmatrix}$
   \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+  
 TODO: Select the appropriate answer.
 
 \begin{tabular}[h]{ll}
@@ -398,6 +413,24 @@ $\square$ & Neither \\
 \end{tcolorbox}
 \end{enumerate}
 
+\pagebreak
+\item \textbf{[3 points]} 
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+ You verify that the image looks as expected after you've passed it through the anti-aliaser. Do you have an obligation to tell your superior about the way you've modified the image? If yes, do you need to also tell your superior about image modifications like brightness, zoom, contrast, etc? If no, what amount of image modification is acceptable before it becomes misinformation or misleading? \textbf{[6-7 sentences]}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TODO: Your answer for (c) here
+
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}}
+\clipbox{0pt \dimexpr\dp0-9\baselineskip\relax{} 0in 0pt}{\copy0}
+\end{tcolorbox}
+
+\pagebreak
 \item \textbf{[2 points]}
 You think you've gotten a full understanding of how the filters classify, but decide to test if you can recognize which filter has been used to get a target output image. 
 
@@ -412,41 +445,50 @@ Given the input image below, identify the filter that has been applied.
 Output image 1:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 5/10]{images/q3img1.png}}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TODO: Select the appropriate answer.
 
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
 
 \item
 Output image 2:\\
 \raisebox{\baselineskip-\height}{\includegraphics[width=\textwidth * 5/10]{images/q3img2.png}}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TODO: Select the appropriate answer.
 
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
 \end{enumerate}
 
+\pagebreak
 \item \textbf{[2 points]}
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
 Which of the following statements are true? (Check all that apply).
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+%%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TODO: Select all that apply.
 
 \begin{tabular}[h]{ll}
-$\square$ & High pass filter kernels will always contain at least one negative number \\
+$\square$ & High pass filter kernels will always contain at least one negative \\
+& number \\
 $\square$ & A Gaussian filter is an example of a low pass filter \\
 $\square$ & A high pass filter is the basis for most smoothing methods \\
-$\square$ & In a high pass filter, the center of the kernel must have the highest value \\
+$\square$ & In a high pass filter, the center of the kernel must have the highest \\ 
+& value \\
 \end{tabular}
+%%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
 
 \end{enumerate}
@@ -455,7 +497,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q6:} \textbf{[7 points]}
+\paragraph{Q4:} \textbf{[7 points]}
     It is very important to understand how convolution/correlation scale with input size. A good measure of scale is measuring how the computation times of such filtering operations varies with filter sizes.
     
     To make an accurate assessment on this computational scaling, we will be using filters with dimensions $n \times n$ where $n$ is an odd number and $n \in [3, 15]$ (i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and images of sizes between 0.25 to 8 megapixels.
@@ -557,12 +599,15 @@ plt.ylabel('operation time (seconds)')
 plt.legend(title="filter sizes (pixels)")
 plt.show()
 
-# You may also use this page for your code.
-# WARNING: 
-# IF YOU DO NOT USE THIS PAGE, KEEP THE ABOVE 
-# STATEMENT TO MAINTAIN PAGE ALIGNMENT WITH GRADESCOPE
+################################################
+# YOU MAY USE THIS ADDITIONAL PAGE
+
+# WARNING: IF YOU DON'T END UP USING THIS PAGE
+# KEEP THESE COMMENTS TO MAINTAIN PAGE ALIGNMENT
+################################################
 
 \end{python}
+
 
 \end{tcolorbox}
     
@@ -602,7 +647,7 @@ Do the results match your expectation given the number of multiply and add opera
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
-\paragraph{Q7:} \textbf{[7 points]} The \texttt{numpy} library is extremely important when working with input data (vectors or matrices) and their linear algebra manipulations. In Computer Vision, your data will often come in the form of matrices of images (pixel representations). 
+\paragraph{Q5:} \textbf{[7 points]} The \texttt{numpy} library is extremely important when working with input data (vectors or matrices) and their linear algebra manipulations. In Computer Vision, your data will often come in the form of matrices of images (pixel representations). 
 
  To familiarize yourself with the library, read through the following scenarios and complete the exercises. Write \emph{one} \texttt{numpy} function to complete each of the following tasks.
 
@@ -725,7 +770,15 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     
 \end{enumerate}
 
+\pagebreak
+\section*{Discussion Attendance:}
+\paragraph{Extra Credit:} \textbf{[2 points]}
 
+Please mark this box only if you've attended the discussion session in person.
+
+\begin{tabular}[h]{ll}
+$\square$ & I attended the discussion session on DATE \\
+\end{tabular}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
