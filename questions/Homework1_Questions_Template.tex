@@ -22,19 +22,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% How to include two graphics on the same line:
-%
-% \includegraphics[width=0.49\textwidth * 5/10]{yourgraphic1.png}
-% \includegraphics[width=0.49\textwidth * 5/10]{yourgraphic2.png}
-%
-% How to include equations:
-%
-% \begin{equation}
-% y = mx+c
-% \end{equation}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[11pt]{article}
 
 \usepackage[english]{babel}
@@ -61,6 +48,8 @@
 % a great python code format: https://github.com/olivierverdier/python-latex-highlighting
 \usepackage{pythonhighlight}
 
+\usepackage{trimclip,lipsum}
+
 \frenchspacing
 \setlength{\parindent}{0cm} % Default is 15pt.
 \setlength{\parskip}{0.3cm plus1mm minus1mm}
@@ -69,27 +58,32 @@
 \fancyhf{}
 \lhead{Homework 1 Written Questions}
 \rhead{CSCI 1430}
-% \lfoot{\textcolor{red}{Only
-% \ifcase\thepage
-% \or instructions
-% \or A1
-% \or A2
-% \or Q3
-% \or A3
-% \or A4
-% \or A5
-% \or instructions
-% \or instructions
-% \or A6 
-% \or instructions
-% \or A7 
-% \or feedback
-% \else
-% EXTRA PAGE ADDED
-% \fi
-% should be on this page
-% }}
-\rfoot{\thepage~/ 14}
+\lfoot{\textcolor{red}{Only
+\ifcase\thepage
+\or instructions
+\or A1
+\or A2
+\or A3 (a)
+\or A3 (b) - (c)
+\or A4 (a) - (b)
+\or A4 (c)
+\or A5 (a)
+\or A5 (b)
+\or A5 (c) - (d)
+\or A6 (a)
+\or A6 (a)
+\or A6 (a)
+\or A6 (b) - (c)
+\or A7 (a) - (b)
+\or A7 (c) - (e)
+\or A7 (f) - (g)
+\or feedback
+\else
+[ERROR: PAGE MISALIGNMENT]
+\fi
+should be on this page
+}}
+\rfoot{\thepage~/ 18}
 
 
 \date{}
@@ -106,15 +100,18 @@
 \begin{itemize}
   \item 7 questions \textbf{[5 + 5 + 13 + 8 + 9 + 7 + 7 = 54 + 1 bonus points]}.
   \item Fill all your answers within the answer boxes, and \textbf{please do NOT remove the answer box outlines}.
+  \item Questions are highlighted in the \textbf{orange boxes}, bonus questions are highlighted in \textbf{blue boxes}, answers should be recorded in the \textbf{green boxes}.
   \item Include code, images, and equations where appropriate.
   \item To identify all places where your responses are expected, search for `TODO'.
+  \item The answer box sizes have been set by the staff beforehand and will truncate your text if it goes beyond the limit. Please make sure your responses fit in the appropriate spaces. \textbf{Extra pages are not permitted unless otherwise specified.}
+  \item Make sure your submission has the right number of pages to validate page alignment sanity (check the footer).
   \item Please make this document anonymous.
 \end{itemize}
 
 \section*{ Gradescope Instructions}
 \begin{itemize}
   \item When you are finished, compile this document to a PDF and submit it directly to Gradescope. 
-  \item You will be required to assign the appropriate answers to the right pages on Gradescope. \textbf{Failure to assign pages correctly will lead to a deduction of 2 points per misaligned page (capped at a maxmimum 6 point deduction).}
+  \item The pages will be automatically assigned to the right questions on Gradescope \textit{assuming you do not add any unnecessary pages}. \textbf{Inconsistently assigned pages will lead to a deduction of 2 points per misaligned page (capped at a maximum 6 point deduction).}
 \end{itemize}
 
 \pagebreak
@@ -123,13 +120,16 @@
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
 
-Do you think we've reached this point and why? What manipulations do you think are permissible for an image to be genuine, if any? Based on this, please list at least three potential solutions (scientific, journalistic, legal, etc.) to address mistrust in photographic media. [6-7 sentences]
+Do you think we've reached this point and why? What manipulations do you think are permissible for an image to be genuine, if any? Based on this, please list at least three potential solutions (scientific, journalistic, legal, etc.) to address mistrust in photographic media. \textbf{[6-7 sentences]}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-\begin{mdframed}
-    TODO: Your answer here
-\end{mdframed}
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black]
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+            
+    TODO: Your answer for here
+
+    }}
+    \clipbox{0pt \dimexpr\dp0-9\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
 
@@ -137,13 +137,16 @@ Do you think we've reached this point and why? What manipulations do you think a
 \paragraph{Q2:} \textbf{[5 points]} For your CS1430 final project, you decide to build an \href{https://respeecher.medium.com/what-is-synthetic-film-dubbing-ai-deepfake-technology-explained-9f6118532e8c}{AI dubbing program} that can alter an actor's lip movements to make film dubbing more effective. Your project is successful, and creates perfect videos that could depict anyone appearing to say anything.
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Please list at least three potential consequences if your project is misused. What are three things that could be done (scientifically, legally, etc.) to try and avoid these problems? [5-6 sentences]
+Please list at least three potential consequences if your project is misused. What are three things that could be done (scientifically, legally, etc.) to try and avoid these problems? \textbf{[6-7 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-\begin{mdframed}
-        TODO: Your answer here
-    \end{mdframed}
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+        
+TODO: Your answer for here
+
+}}
+\clipbox{0pt \dimexpr\dp0-9\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
 \pagebreak
@@ -162,98 +165,81 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
 \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences). Please be as technical as possible, and don't shy away from using mock variables for the dimensions of any convolution components.
 \end{tcolorbox}
 \begin{enumerate}[(i)]
-    \item \textbf{[2 points]} input (is there just one?) 
+    \item \textbf{[2 points]} input (is there just one?) \textbf{[3-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
+        \setbox0=\hbox{\parbox[t]{\textwidth}{
+        
         TODO: Your answer for (a) (i) here
-    \end{mdframed}
+        
+        }}
+        \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} transformation (how is the image transformed?) 
+    \item \textbf{[2 points]} transformation (how is the image transformed?) \textbf{[3-4 sentences]} 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+        
         TODO: Your answer for (a) (ii) here
-    \end{mdframed}
+        
+        }}
+        \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} output
+    \item \textbf{[2 points]} output \textbf{[3-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+        
         TODO: Your answer for (a) (iii) here
-    \end{mdframed}
+        
+        }}
+        \clipbox{0pt \dimexpr\dp0-4\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
 \end{enumerate}
 
 
-\item \textbf{[3 + 1 points]} 
+\item \textbf{[3 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Briefly describe at least three different filters you may encounter in image convolution along with an example application for each. Additionally, what kind of filter would you want to use to process your image of the Orion Nebula? 
+Briefly describe at least three different filters you may encounter in image convolution along with an example application for each. \textbf{[5 - 6 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-\begin{mdframed}
-    TODO: Your answer for (b) here
-\end{mdframed}
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+        
+        TODO: Your answer for (b) here
+        
+        }}
+        \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
+\item \textbf{(Bonus)} \textbf{[1 point]}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+What kind of filter would you want to use to process your image of the Orion Nebula, and why? \textbf{[2 - 3 sentences]}
+\end{tcolorbox}
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+        
+        TODO: Your answer for (b) here
+        
+        }}
+        \clipbox{0pt \dimexpr\dp0-3\baselineskip\relax{} 0in 0pt}{\copy0}
+\end{tcolorbox}
 
-% \item
-% You've successfully cleaned up the image!
-
-% \includegraphics[width=\textwidth * 5/10]{images/orion.JPG}
-
-% Now \textit{this} is quite something. But wait, you realize that the image seems... slightly smaller than the original? Thankfully, we can rectify this with padding.
-% \begin{enumerate}[(i)]
-%     \item \textbf{[3 points]} Briefly describe at least three different types of padding required on output images post convolution.
-
-%     \begin{mdframed}
-%         TODO: Your answer for (c) (i) here
-%     \end{mdframed}
-
-%     \begin{mdframed}[hidealllines=true,backgroundcolor=yellow]
-%     \item \textbf{[1 point]} (Bonus) What kind of padding would you use on your image of the Orion Nebula? (There's no right answer, but please justify!)
-%     \end{mdframed}
-    
-%     \begin{mdframed}
-%         TODO: Your answer for (c) (ii) here
-%     \end{mdframed}
-% \end{enumerate}
 \item \textbf{[5 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Why is image convolution important in Computer Vision? Which applications does it allow? (5-10 sentences)
+Why is image convolution important in Computer Vision? Which applications does it allow? \textbf{[7-8 sentences]}
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+
+TODO: Your answer for (c) here
+
+}}
+\clipbox{0pt \dimexpr\dp0-11\baselineskip\relax{} 0in 0pt}{\copy0}
+\end{tcolorbox}
+
 \end{enumerate}
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \pagebreak
-% \paragraph{A3:} Your answer here.
-% % Uncomment the stencil below and fill in your solution.
-
-% \begin{enumerate}[(a)]
-% \item
-% \begin{enumerate}[(i)]
-%     \item
-%     \begin{mdframed}
-%         TODO: Your answer for (a) (i) here
-%     }}
-%     \item
-%     \begin{mdframed}
-%         TODO: Your answer for (a) (ii) here
-%     }}
-%     \item
-%     \begin{mdframed}
-%         TODO: Your answer for (a) (iii) here
-%     }}
-% \end{enumerate}
-% \item
-% \item
-% \begin{enumerate}[(i)]
-%     \item
-%     \item (Bonus)
-% \end{enumerate}
-% \end{enumerate}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -266,25 +252,31 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 \begin{enumerate}[(a)]
     \item \textbf{[2 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Comment on the difference between convolution and correlation, including their properties. 
+    Comment on the difference between convolution and correlation, including their properties. \textbf{[5 - 6 sentences]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (a) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (a) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
 
     \item \textbf{[1 + 1 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? (3-5 sentences)
+    You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? \textbf{[4-5 sentences]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (b) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    
+    TODO: Your answer for (b) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-5\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
     \item \textbf{[2 + 2 points]}
@@ -295,7 +287,7 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     
     Write some code that takes an image and produces two distinct images, one from convolution and one from correlation on some kernel of your choice. 
     
-    Specify your kernel, and provide the input image and output results. Then, use your understanding of convolution and correlation to explain the outputs. (5-10 sentences)
+    Specify your kernel, and provide the input image and output results. Then, use your understanding of convolution and correlation to explain the outputs. \textbf{[4-5 sentences]}
     \end{tcolorbox}
     
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
@@ -306,23 +298,15 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     \includegraphics[width=\textwidth * 5/10]{TODO: convolved-img.png}
     \includegraphics[width=\textwidth * 5/10]{TODO: correlated-img.png}
     
-    \begin{mdframed}
-        TODO: Your answer for (c) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (c) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-5\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
 \end{enumerate}
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \paragraph{A4:} Your answer here.
-% % Uncomment the stencil below and fill in your solution.
-
-% \begin{enumerate}[(a)]
-% \item
-% \item
-% \item
-% \end{enumerate}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -344,12 +328,15 @@ After a heavy analysis, you decide the castle is in decent shape. As such, you n
 \item \textbf{[2 points]} Oh no! Looks like there are some weird artefacts on the image, almost as though the walls are bleeding color? 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-This phenomena is called aliasing, but why has it happened?
+This phenomena is called aliasing, but why has it happened? \textbf{[5 - 6 sentences]}
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-\begin{mdframed}
-    TODO: Your answer for (a) here
-\end{mdframed}
+\setbox0=\hbox{\parbox[t]{\textwidth}{
+
+TODO: Your answer for (a) here
+
+}}
+\clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
 \item \textbf{[3 points]}
@@ -464,8 +451,6 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 \end{enumerate}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Please leave the pagebreak
@@ -496,7 +481,7 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
-\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black]
+\begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black,height fixed for=all]
 \begin{python}
 import time
 import matplotlib.pyplot as plt
@@ -532,12 +517,15 @@ for kernel_size in range():
     #while image size is bigger than .25MPx
     while(shrinking_image.size > 250000):
 
-    	# 4) TODO - create your kernel. Your kernel can hold
-    	#    any values, as the kernel values shouldn't
-    	#    affect computation time. Avoid using np.zeros to
-    	#    create your kernal, as this messes up the intended
-    	#    output graph. The size of the kernel
-    	#    must be kernel_size x kernel_size
+    	# 4) TODO - create your kernel. Your kernel can 
+    	#    hold any values, as the kernel values 
+    	#    shouldn't affect computation time. 
+    	
+    	#    Avoid using np.zeros to create your kernal, 
+    	#    as this messes up the intended output graph. 
+    	
+    	#    The size of the kernel must be kernel_size 
+    	#    x kernel_size
         kernel =
 
         #5) TODO - reduce your image size. You can choose by
@@ -550,7 +538,6 @@ for kernel_size in range():
         # 6) TODO - use one of the imported libraries to do
         # your correlation/convolution on the image. You can
         # choose which operation to perform.
-
 
         #gets the current time (in seconds)
         end = time.time()
@@ -570,47 +557,48 @@ plt.ylabel('operation time (seconds)')
 plt.legend(title="filter sizes (pixels)")
 plt.show()
 
+# You may also use this page for your code.
+# WARNING: 
+# IF YOU DO NOT USE THIS PAGE, KEEP THE ABOVE 
+# STATEMENT TO MAINTAIN PAGE ALIGNMENT WITH GRADESCOPE
+
 \end{python}
+
 \end{tcolorbox}
     
     
     \item \textbf{[2 points]}
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Present your graph with a brief description of what your graph demonstrates.
+    Present your graph with a brief description of what your graph demonstrates. \textbf{[2 - 3 sentences]}
     \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (a) (ii) here
-    \end{mdframed}
+    \includegraphics[width=0.5\textwidth]{TODO: graph.png}
+    
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    
+    TODO: Your answer for (b) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-3\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
 
 \item \textbf{[2 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Do the results match your expectation given the number of multiply and add operations in convolution? (3-5 sentences)
+Do the results match your expectation given the number of multiply and add operations in convolution? \textbf{[5-6 sentences]}
 \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (b) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (c) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-7\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
 \end{enumerate}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \pagebreak
-% \paragraph{A6:} Your graph and answer here.
-% % Uncomment the stencil below and fill in your solution.
-
-% % \begin{enumerate}[(a)]
-
-% % \item Add your graph as well as a brief description of what your graph demonstrates.
-
-% % \item Do the results match your expectation given the number of multiply and add operations in convolution?
-
-% % \end{enumerate}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
@@ -633,108 +621,115 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     \item \textbf{[1 point]} You're attempting to create a black image base, \texttt{img}. All values in this matrix are 0. 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Create \texttt{img} where \texttt{np.shape(img) == (320,640)}.
+    Create \texttt{img} where \texttt{np.shape(img) == (320,640)}. \textbf{[1 sentence]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (a) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    
+    TODO: Your answer for (a) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
     \item \textbf{[1 point]} You've been working on a Computer Vision pipeline that de-noises your image. Unfortunately, it seems to mess up the dimensions, and outputs an image-array, \texttt{img\_out}, where \texttt{np.shape(img\_out) == (1, 1, 320, 640)}. 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Convert \texttt{img\_out} to a new 2D image-array, \texttt{img\_fixed}, where \texttt{np.shape(img\_fixed) == (320, 640)}. In other words, remove all the 1-sized dimensions.
+    Convert \texttt{img\_out} to a new 2D image-array, \texttt{img\_fixed}, where \texttt{np.shape(img\_fixed) == (320, 640)}. In other words, remove all the 1-sized dimensions. \textbf{[1 sentence]}
     \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (b) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (b) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
     \item \textbf{[1 point]} Usually, image-arrays are represented with three dimensions. The first dimension represents the number of channels, and can be used to identify if an image is RGB or grayscale. 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Say you have a grayscale image-array \texttt{img} where \texttt{np.shape(img) == (320, 640)}. Convert this to a new image-array, \texttt{img\_expanded}, which appropriately captures the number of channels, where \texttt{np.shape(img\_expanded) == (1, 320, 640)}. In other words, add a dimension to \texttt{img}.
+    Say you have a grayscale image-array \texttt{img} where \texttt{np.shape(img) == (320, 640)}. Convert this to a new image-array, \texttt{img\_expanded}, which appropriately captures the number of channels, where \texttt{np.shape(img\_expanded) == (1, 320, 640)}. In other words, add a dimension to \texttt{img}. \textbf{[1 sentence]}
     \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (c) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    
+    TODO: Your answer for (c) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
     \item \textbf{[1 point]} When you learn about Convolutional Neural Networks later in the course, you'll find yourself needing to normalize input images such that each channel has intensities ranging from -1 to 1 instead of 0 to 255.
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Assume you have a linearly normalized grayscale 2D image-array, \texttt{img} (the channel dimension of 1 has already been removed), and want to remove outlier intensities and artefacts (such as glare). Clip \texttt{img} so all its values lie within the range [-0.5, 0.5].
+    Assume you have a linearly normalized grayscale 2D image-array, \texttt{img} (the channel dimension of 1 has already been removed), and want to remove outlier intensities and artefacts (such as glare). Clip \texttt{img} so all its values lie within the range [-0.5, 0.5]. \textbf{[1 sentence]}
     \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (d) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (d) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[1 point]} Let's say you're trying to code a red-green-filter function. This will take in an RGB image-array, \texttt{img}, (this means the image has 3 channels), and filters all but the blue channel. Note that \texttt{np.shape(img) == (320, 640, 3)}.
+    \item \textbf{[1 point]} Let's say you're trying to code a red-green-filter function. This will take in an RGB image-array, \texttt{img}, (this means the image has 3 channels), and filters all but the blue channel. Note that \texttt{np.shape(img) == (320, 640, 3)}. \textbf{[1 sentence]}
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
     Retrieve the blue channel of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (e) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (e) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
     \item \textbf{[1 point]} Let's say you're trying to code a green-filter function. This will take in an RGB image-array, \texttt{img}, and filters out the green channel. Note that \texttt{np.shape(img) == (320, 640, 3)}. 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Retrieve the red and blue channels of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values.
+    Retrieve the red and blue channels of \texttt{img} while preserving all of \texttt{img}'s dimensions and intensity values. \textbf{[1 sentence]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (f) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+
+    TODO: Your answer for (f) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
     \item \textbf{[1 point]} Same-Padding is a useful tool to ensure that the dimensions of the output image from a convolution operation matches the dimensions of the input image. 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Given an RGB image-array, \texttt{img}, pad it with two columns of zeros on the left and right edges of the image, and three rows of zeros on the top and bottom edges of the image. Don't add zeros to the color channel dimension (the front and back faces of the image-array).
+    Given an RGB image-array, \texttt{img}, pad it with two columns of zeros on the left and right edges of the image, and three rows of zeros on the top and bottom edges of the image. Don't add zeros to the color channel dimension (the front and back faces of the image-array). \textbf{[1 sentence]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
-    \begin{mdframed}
-        TODO: Your answer for (g) here
-    \end{mdframed}
+    \setbox0=\hbox{\parbox[t]{\textwidth}{
+    
+    TODO: Your answer for (g) here
+    
+    }}
+    \clipbox{0pt \dimexpr\dp0-1\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
 \end{enumerate}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \pagebreak
-% \paragraph{A7:} Your answer here. Remember, write \emph{one} numpy function to complete each of the tasks---this includes operators like [] and :.
-% %  Uncomment the stencil below and fill in your solution.
-
-% % \begin{enumerate}[(a)]
-% % \item
-% % \item
-% % \item
-% % \item
-% % \item
-% % \item
-% % \item
-% % \end{enumerate}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Please leave the pagebreak
 %% any suggestions for more?
 \pagebreak
 \section*{Feedback? (Optional)}
