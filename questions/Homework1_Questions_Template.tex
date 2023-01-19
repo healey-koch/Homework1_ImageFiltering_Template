@@ -123,10 +123,12 @@
 
 \paragraph{Q1:} \textbf{[14 + 1 bonus points]} You've been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out looking too exposed:
 
-\includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/orion-noise.png}
+\includegraphics[width=0.43\textwidth,height=6cm,keepaspectratio]
+{images/orion-noise.png}
 
 
-Thankfully, there's a way to deal with these artefacts: image convolution. It's a type of image filtering, and is a fundamental image processing tool.
+
+Thankfully, there's a way to deal with these artefacts (i.e., noises) as results of overexposure: image convolution. It's a type of image filtering, and is a fundamental image processing tool.
 
 \begin{enumerate}[(a)]
 \item 
@@ -134,7 +136,7 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
 \emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences). Please be as technical as possible, and don't shy away from using mock variables for the dimensions of any convolution components.
 \end{tcolorbox}
 \begin{enumerate}[(i)]
-    \item \textbf{[2 points]} input (is there just one?) \textbf{[3-4 sentences]}
+    \item \textbf{[2 points]} input (is there just one?) \textbf{[2-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,7 +148,7 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
         \clipbox{0pt \dimexpr\dp0-6\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} transformation (how is the image transformed?) \textbf{[3-4 sentences]} 
+    \item \textbf{[2 points]} transformation (how is the image transformed?) \textbf{[2-4 sentences]} 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,7 +160,7 @@ Thankfully, there's a way to deal with these artefacts: image convolution. It's 
         \clipbox{0pt \dimexpr\dp0-10\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} output \textbf{[3-4 sentences]}
+    \item \textbf{[2 points]} output \textbf{[2-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,7 +210,7 @@ What kind of filter would you want to use to process your image of the Orion Neb
 
 \item \textbf{[5 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Why is image convolution important in Computer Vision? Which applications can it be beneficial to and where can it be misused? \textbf{[8-10 sentences]}
+Why is image convolution important in Computer Vision? Which applications can it be beneficial to and where can it be misused? \textbf{[5-8 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
@@ -544,8 +546,10 @@ from scipy.ndimage import correlate
 image = img_as_float32(io.imread('PATH'))
 
 # 2) TODO - change the image size so it starts
-#    at 8MPix (calculated as height x width)
-#    use one of the imported libraries
+#    at 8MPix (calculated as height x width x channels)
+#    use one of the imported libraries. Note that the 
+#    number of channels should be kept the same 
+#    after this operation
 original_image =
 
 # 3) TODO - iterate through odd numbers from 3 to 15
