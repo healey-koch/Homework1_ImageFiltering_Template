@@ -81,7 +81,7 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     probs = np.asarray([exp(-z*z/(2*s*s))/sqrt(2*pi*s*s) for z in range(-k,k+1)], dtype=np.float32)
     kernel = np.outer(probs, probs)
 
-    # Your code here:
+    # Your code here
     low_frequencies = np.zeros(image1.shape) # Replace with your implementation
 
     # (2) Remove the low frequencies from image2. The easiest way to do this is to
@@ -91,7 +91,9 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     high_frequencies = np.zeros(image1.shape) # Replace with your implementation
 
     # (3) Combine the high frequencies and low frequencies
-    # Your code here #
+    # Your code here
     hybrid_image = np.zeros(image1.shape) # Replace with your implementation
 
+    # Clipping the image for display purpose (removing this line could cause value error)
+    hybrid_image = np.clip(hybrid_image, 0.0, 1.0)
     return low_frequencies, high_frequencies, hybrid_image
