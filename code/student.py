@@ -90,10 +90,8 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     # Your code here #
     high_frequencies = np.zeros(image1.shape) # Replace with your implementation
 
-    # (3) Combine the high frequencies and low frequencies
+    # (3) Combine the high frequencies and low frequencies, and make sure the hybrid image values are within the range 0.0 to 1.0
     # Your code here
     hybrid_image = np.zeros(image1.shape) # Replace with your implementation
 
-    # Clipping the image for display purpose (removing this line could cause value error)
-    hybrid_image = np.clip(hybrid_image, 0.0, 1.0)
     return low_frequencies, high_frequencies, hybrid_image
