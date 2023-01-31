@@ -81,7 +81,6 @@
 \or \textbf{A5 (a) - (b)}
 \or \textbf{A5 (c) - (e)}
 \or \textbf{A5 (f) - (g)}
-\or \textbf{discussion attendance}
 \or \textbf{feedback}
 \else
 \textbf{[ERROR: PAGE MISALIGNMENT]}
@@ -98,74 +97,81 @@
 
 \begin{document}
 \maketitle
-\vspace{-3cm}
 \thispagestyle{fancy}
 
-\section*{ Document Instructions}
+\section*{Template Instructions}
+
+This document is a template with specific answer regions and a fixed number of pages. Given large class sizes and limited TA time, the template helps the course staff to grade efficiently and still focus on the content of your submissions. Please help us in this task:
+ 
 \begin{itemize}
-  \item 5 questions \textbf{[14 + 11 + 12 + 7 + 7 = 51 + 3 bonus points]}.
-  \item Fill all your answers within the answer boxes, and \textbf{please do NOT remove the answer box outlines}.
-  \item Questions are highlighted in the \textbf{orange boxes}, bonus questions are highlighted in \textbf{blue boxes}, answers should be recorded in the \textbf{green boxes}.
-  \item Include code, images, and equations where appropriate.
-  \item To identify all places where your responses are expected, search for `TODO'.
-  \item The answer box sizes have been set by the staff beforehand and \textbf{your responses should not exceed the green borders}. Any overfull text may be truncated, so make sure your responses fit. \textbf{Extra pages are not permitted unless otherwise specified.}
-  \item Make sure your submission has the right number of pages to validate page alignment sanity (check the footer).
-  \item Please make this document anonymous.
+  \item Make this document anonymous.
+  
+  \item Questions are in the orange boxes. Provide answers in the green boxes.
+  \item Use the footer to check for correct page alignment.
+
+  \item \textbf{Do NOT remove the answer box.}
+  \item \textbf{Do NOT change the size of the answer box.}
+  \item \textbf{Extra pages are not permitted unless otherwise specified.}
+  \item \textbf{Template edits or page misalignment will lead to a 10 point deduction.}
 \end{itemize}
 
-\section*{ Gradescope Instructions}
+\section*{Gradescope Submission}
 \begin{itemize}
-  \item When you are finished, compile this document to a PDF and submit it directly to Gradescope. 
-  \item The pages will be automatically assigned to the right questions on Gradescope \textit{assuming you do not add any unnecessary pages}. \textbf{Inconsistently assigned pages will lead to a deduction of 2 points per misaligned page (capped at a maximum 6 point deduction).}
+  \item Compile this document to a PDF and submit it to Gradescope.
+  \item Pages will be automatically assigned to the right questions on Gradescope.
 \end{itemize}
 
+\section*{This Homework}
+\begin{itemize}
+    \item 5 questions \textbf{[15 + 11 + 12 + 7 + 7 = 49]}.
+    \item Include code, images, and equations where appropriate.
+\end{itemize}
+
+% Please leave the pagebreak
 \pagebreak
 
-\paragraph{Q1:} \textbf{[14 + 1 bonus points]} You've been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, Providence has a knack for obstructing the night sky with occasional clouds. As a result, your absolutely fantastic image of the Orion nebula has come out with a lot of noises:
+\paragraph{Q1:} \textbf{[15 points]} We have been given special permission to use the telescope on the roof of Barus and Holley. Unfortunately, our fantastic image of the Orion nebula has noise caused by the imaging sensor:
 
 \includegraphics[width=0.5\textwidth,height=6cm,keepaspectratio]
 {images/orion-noise.png}
 
-
-
-Thankfully, there's a way to deal with these artefacts (i.e., noises): image convolution. It's a type of image filtering, and is a fundamental image processing tool.
+One way to deal with this noise is with image convolution. Convolution is a type of image filtering that is a fundamental image processing tool.
 
 \begin{enumerate}[(a)]
 \item 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-\emph{Explicitly describe} the 3 main components of image convolution: (5-10 sentences). Please be as technical as possible, and don't shy away from using mock variables for the dimensions of any convolution components.
+\emph{Explicitly describe} the input, transformation, and output components of 2D discrete convolution. Please be precise; define variables as need.
 \end{tcolorbox}
 \begin{enumerate}[(i)]
-    \item \textbf{[2 points]} input (is there just one?) \textbf{[2-4 sentences]}
+    \item \textbf{[2 points]} Input \textbf{[2--4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (a) (i) here %%%%%% Remove this line in your answer! %%%%%%
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-6\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} transformation (how is the image transformed?) \textbf{[2-4 sentences]} 
+    \item \textbf{[2 points]} Transformation (how is the image transformed?) \textbf{[2--4 sentences]} 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (a) (ii) here %%%%%% Remove this line in your answer! %%%%%%
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-10\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
     
-    \item \textbf{[2 points]} output \textbf{[2-4 sentences]}
+\pagebreak
+
+    \item \textbf{[2 points]} Output \textbf{[2-4 sentences]}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (a) (iii) here %%%%%% Remove this line in your answer! %%%%%%
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
@@ -177,29 +183,27 @@ Thankfully, there's a way to deal with these artefacts (i.e., noises): image con
 
 \item \textbf{[3 points]} 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Briefly describe at least three different filters you may encounter in image convolution along with an example application for each. \textbf{[5 - 6 sentences]}
+Briefly describe three different kernels we may use with convolution along with an example application for each. \textbf{[5--6 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (b) here %%%%%% Remove this line in your answer! %%%%%%
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-12\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
-\item \textbf{(Bonus)} \textbf{[1 point]}
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
-What kind of filter would you want to use to process your image of the Orion Nebula, and why? \textbf{[2 - 3 sentences]}
+\item \textbf{[1 point]}
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+What kind of kernel might we use to process our image of the Orion Nebula, and why? \textbf{[2--3 sentences]}
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
-        TODO: Your answer for (c) here %%%%%% Remove this line in your answer! %%%%%%
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
@@ -208,16 +212,15 @@ What kind of filter would you want to use to process your image of the Orion Neb
 
 \pagebreak
 
-\item \textbf{[5 points]} 
+\item \textbf{[5 points]}
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-Why is image convolution important in Computer Vision? Which applications can it be beneficial to and where can it be misused? \textbf{[5-8 sentences]}
+Why is image convolution important in computer vision? Which applications can it benefit and where can it be misused? \textbf{[5-8 sentences]}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-        TODO: Your answer for (d) here %%%%%% Remove this line in your answer! %%%%%%
 
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }}
@@ -230,7 +233,7 @@ Why is image convolution important in Computer Vision? Which applications can it
 
 % Please leave the pagebreak
 \pagebreak
-\paragraph{Q2:} \textbf{[11 points]} Now that you've successfully used convolution to de-noise your image of the Orion nebula, you decide to explore the filtering technique more closely. 
+\paragraph{Q2:} \textbf{[11 points]} Now that we've successfully used convolution to de-noise our image of the Orion nebula, you decide to explore the filtering technique more closely. 
 
 Specifically, you know two filtering operations exist: correlation and convolution. Both techniques extract (or delete) information from images.
 
@@ -238,14 +241,13 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 
     \item \textbf{[3 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    In what ways can extraction of information from images be helpful or beneficial? What about deletion of information? Discuss this both in the context of your image of the Orion nebula and other real-life examples. \textbf{[5-6 sentences]}
+    In what ways can extraction of information from images be helpful or beneficial? What about deletion of information? Discuss this both in the context of your image of the Orion nebula and other real-life examples. \textbf{[5--6 sentences]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    TODO: Your answer for (a) here %%%%%% Remove this line in your answer! %%%%%%
     
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -254,14 +256,13 @@ Specifically, you know two filtering operations exist: correlation and convoluti
 
     \item \textbf{[2 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    Comment on the difference between convolution and correlation, including their properties. \textbf{[5 - 6 sentences]}
+    Comment on the difference between convolution and correlation, including their properties. \textbf{[5--6 sentences]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (b) here %%%%%% Remove this line in your answer! %%%%%%
     
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -271,7 +272,7 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     \pagebreak
     \item \textbf{[1 + 1 points]} 
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-    You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? \textbf{[4-5 sentences]}
+    You attempt to use both correlation and convolution on the mean filter over the orion nebula. Do you expect different output images? Generally, when do correlation and convolution produce identical results? \textbf{[4--5 sentences]}
     \end{tcolorbox}
     
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
@@ -294,7 +295,7 @@ Specifically, you know two filtering operations exist: correlation and convoluti
     
     Write some code that takes an image and produces two distinct images, one from convolution and one from correlation on some kernel of your choice. 
     
-    Specify your kernel, and provide the input image and two output results. Then, use your understanding of convolution and correlation to explain the outputs. \textbf{[4-5 sentences]}
+    Specify your kernel, and provide the input image and two output results. Then, use your understanding of convolution and correlation to explain the outputs. \textbf{[4--5 sentences]}
     \end{tcolorbox}
     
     \emph{Please use \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.convolve.html}{$scipy.ndimage.convolve$} and \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.correlate.html}{$scipy.ndimage.correlate$} to experiment!}
@@ -335,7 +336,7 @@ After a heavy analysis, you decide the castle is in decent shape. As such, you n
 \item \textbf{[2 points]} Oh no! Looks like there are some weird artifacts on the image, almost as though the walls are bleeding color? 
     
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-This phenomena is called aliasing, but why has it happened? \textbf{[5 - 6 sentences]}
+This phenomena is called aliasing, but why has it happened? \textbf{[5--6 sentences]}
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
@@ -775,16 +776,6 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     
 \end{enumerate}
 
-\pagebreak
-\section*{Discussion Attendance:}
-\paragraph{Extra Credit:} \textbf{[2 points]}
-
-Please mark this box only if you've attended the discussion session in person.
-
-\begin{tabular}[h]{ll}
-$\square$ & I attended the discussion session on September 20, 2022 \\
-\end{tabular}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
