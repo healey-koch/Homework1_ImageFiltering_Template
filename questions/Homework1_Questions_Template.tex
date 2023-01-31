@@ -535,12 +535,13 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 import time
 import matplotlib.pyplot as plt
 from skimage import io, img_as_float32
-#use to rescale+resize image
+# use to rescale+resize image
 from skimage.transform import rescale, resize
-#use to convolve/correlate image
+# use to convolve/correlate image
 from scipy.ndimage import correlate
 
-#This reads in image and converts to a floating point format
+# This reads in image and converts it to a 
+# floating point format
 # 1) TODO - replace PATH with the actual path to the
 #    downloaded RISDance.jpg image linked above
 image = img_as_float32(io.imread('PATH'))
@@ -557,8 +558,8 @@ original_image =
 #   (3x3,5x5,7x7, etc.), for each filter size you will...
 for kernel_size in range():
 
-    # because for each loop you are resizing your image, you
-    # want to start each loop w/the original image size
+    # because for each loop you are resizing your image, 
+    # you want to start each loop w/ original image size
     shrinking_image = original_image
 
     # these lists will hold the values you plot
