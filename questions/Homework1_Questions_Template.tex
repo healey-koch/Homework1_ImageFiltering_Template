@@ -137,6 +137,7 @@ This document is a template with specific answer regions and a fixed number of p
 
 One way to deal with this noise is with image convolution. Convolution is a type of image filtering that is a fundamental image processing tool.
 
+
 \begin{enumerate}[(a)]
 \item 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -196,9 +197,9 @@ Briefly describe three different kernels we may use with convolution along with 
         \clipbox{0pt \dimexpr\dp0-12\baselineskip\relax{} 0in 0pt}{\copy0}
 \end{tcolorbox}
 
-\item \textbf{[1 point]}
-\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-What kind of kernel might we use to process our image of the Orion Nebula, and why? \textbf{[2--3 sentences]}
+\item \textbf{(Bonus)} \textbf{[1 point]}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+What kind of filter might we use to process our image of the Orion Nebula, and why? \textbf{[2 - 3 sentences]}
 \end{tcolorbox}
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
@@ -507,6 +508,8 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
     It is very important to understand how convolution/correlation scale with input size. A good measure of scale is measuring how the computation times of such filtering operations varies with filter sizes.
     
     To make an accurate assessment on this computational scaling, we will be using filters with dimensions $n \times n$ where $n$ is an odd number and $n \in [3, 15]$ (i.e. $3\times3$, $5\times5$, $7\times7$, etc.), and images of sizes between 0.25 to 8 megapixels.
+    
+\emph{Note A megapixel is 1,048,576 ($2^{20}$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). You can use either of the definitions for this question. Megapixels is often shortened to MP or MPix.}
 
 \begin{enumerate}[(a)]
 \item
@@ -525,8 +528,6 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
     
     \end{tcolorbox}
 
-\emph{Note A megapixel is 1,048,576 ($2^{20}$) pixels (1024$\times$1024), or sometimes also 1,000,000 pixels (especially if you manufacture cameras). You can use either of the definitions for this question. Megapixels is often shortened to MP or MPix.}
-
 \emph{Image:} \href{RISDance.jpg}{RISDance.jpg} (in the .tex directory).
 
 \begin{tcolorbox}[enhanced jigsaw,breakable,pad at break*=1mm,colback=white!5!white,colframe=green!75!black,height fixed for=all]
@@ -536,12 +537,13 @@ $\square$ & In a high pass filter, the center of the kernel must have the highes
 import time
 import matplotlib.pyplot as plt
 from skimage import io, img_as_float32
-#use to rescale+resize image
+# use to rescale+resize image
 from skimage.transform import rescale, resize
-#use to convolve/correlate image
+# use to convolve/correlate image
 from scipy.ndimage import correlate
 
-#This reads in image and converts to a floating point format
+# This reads in image and converts it to a 
+# floating point format
 # 1) TODO - replace PATH with the actual path to the
 #    downloaded RISDance.jpg image linked above
 image = img_as_float32(io.imread('PATH'))
@@ -558,15 +560,15 @@ original_image =
 #   (3x3,5x5,7x7, etc.), for each filter size you will...
 for kernel_size in range():
 
-    #because for each loop you are resizing your image, you
-    #want to start each loop w/the original image size
+    # because for each loop you are resizing your image, 
+    # you want to start each loop w/ original image size
     shrinking_image = original_image
 
-    #these lists will hold the values you plot
+    # these lists will hold the values you plot
     image_sizes = [] #x axis
     times = [] #y axis
 
-    #while image size is bigger than .25MPx
+    # while image size is bigger than .25MPx
     while(shrinking_image.size > 250000):
 
     	# 4) TODO - create your kernel. Your kernel can 
@@ -580,18 +582,18 @@ for kernel_size in range():
     	#    x kernel_size
         kernel =
 
-        #5) TODO - reduce your image size. You can choose by
-        # what increments to reduce your image.
+        # 5) TODO - reduce your image size. You can choose
+        # by what increments to reduce your image.
         shrinking_image =
 
-        #gets the current time (in seconds)
+        # gets the current time (in seconds)
         start = time.time()
 
         # 6) TODO - use one of the imported libraries to do
-        # your correlation/convolution on the image. You can
-        # choose which operation to perform.
+        # your correlation/convolution on the image. 
+        # You can choose which operation to perform.
 
-        #gets the current time (in seconds)
+        # gets the current time (in seconds)
         end = time.time()
 
         #7) TODO - figure out what values to append, and
@@ -599,11 +601,11 @@ for kernel_size in range():
         image_sizes.append()
         times.append()
 
-    #each filter size will be plotted as a separate line, in
-    #a multi-line 2-dimensional graph
+    # each filter size will be plotted as a separate line,
+    # in a multi-line 2-dimensional graph
     plt.plot(image_sizes, times, label=str(kernel.size))
 
-#plot
+# plot
 plt.xlabel('image size (pixels)')
 plt.ylabel('operation time (seconds)')
 plt.legend(title="filter sizes (pixels)")
@@ -775,7 +777,6 @@ You may also use operators like \texttt{[]} and \texttt{:}, but remember to use 
     \end{tcolorbox}
     
 \end{enumerate}
-
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
