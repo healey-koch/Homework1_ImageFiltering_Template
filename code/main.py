@@ -1,7 +1,7 @@
 import argparse
 import os
-from proj1_part1 import filter_test
-from proj1_part2 import hybrid_img_generation
+from hw1_part1 import filter_test
+from hw1_part2 import hybrid_img_generation
 
 def main():
     """
