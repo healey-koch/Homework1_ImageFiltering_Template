@@ -58,21 +58,20 @@ def my_imfilter(image, kernel):
     for q in range(depth):
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
-        for x in range(zero_width, width + zero_width):
-            for y in range(zero_height, height + zero_height):
-                currPixel = 0
-                for j in range(kernel_height * kernel_width):
-                    kX = j % kernel_width
-                    kY = (j - kX)//kernel_width
-                    currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
-                new_channel[x][y] = currPixel
-
-                print("I am at " + str(x) + ", " + str(y))
+        
+        for d in range(width * height):
+            x,y = index_to_pixel(d,width)
+            currPixel = 0
+            for j in range(kernel_height * kernel_width):
+                kX = j % kernel_width
+                kY = (j - kX)//kernel_width
+                currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
+            new_channel[x][y] = currPixel
 
         img_arr[q] = new_channel[zero_width:-zero_width, zero_height:-zero_height]
 
     if(depth > 1):
-        filtered_image = np.stack((img_arr[0], img_arr[1], img_arr[2]), axis=2)
+        filtered_image = np.stack(img_arr, axis=2)
     else:
         filtered_image = img_arr[0]
     ##################
@@ -80,7 +79,7 @@ def my_imfilter(image, kernel):
     print(str(width) + " " + str(height))
 
     return filtered_image
-
+"""
 I = io.imread("./data/bird.bmp")
 img = np.full((320,640,3),255)
 plt.imshow(I)
@@ -89,7 +88,7 @@ currFilter = np.full((5,3),1/15)
 O = my_imfilter(I, currFilter)
 plt.imshow(O)
 plt.show()
-
+"""
 
 """
 EXTRA CREDIT placeholder function
