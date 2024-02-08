@@ -6,6 +6,18 @@ import numpy as np
 from numpy import pi, exp, sqrt
 from skimage import io, img_as_ubyte, img_as_float32
 from skimage.transform import rescale
+import matplotlib.pyplot as plt
+
+def pad_image(image, width_padding, height_padding):
+    img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'constant')
+    print(img.shape)
+    return img
+
+def index_to_pixel(index, width):
+    x = index % width
+    y = (index-x)//width
+    return (x, y)
+
 
 def my_imfilter(image, kernel):
     """
@@ -21,14 +33,63 @@ def my_imfilter(image, kernel):
     Errors if:
     - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
     """
+    width, height, depth = image.shape
     filtered_image = np.zeros(image.shape)
+    print(image.shape)
+    img_arr = list(())
+    if(depth > 1):
+        for i in range(depth):
+            curr_channel = image[:,:,i]
+            img_arr.append(curr_channel)
+    else:
+        img_arr.append(image)
+    
+
+    if (len(kernel) % 2 == 0) or (len(kernel[1]) % 2 == 0):
+        raise Exception("Sorry, kernel cannot have any even dimensions!")
+    kernel_width = len(kernel)
+    kernel_height = len(kernel[1])  
+    zero_width = (kernel_width - 1) // 2
+    zero_height = (kernel_height - 1) // 2
 
     ##################
     # Your code here #
-    print('my_imfilter function in student.py needs to be implemented')
+
+    for q in range(depth):
+        curr_channel = pad_image(img_arr[q],zero_width,zero_height)
+        new_channel = curr_channel.copy()
+        for x in range(zero_width, width + zero_width):
+            for y in range(zero_height, height + zero_height):
+                currPixel = 0
+                for j in range(kernel_height * kernel_width):
+                    kX = j % kernel_width
+                    kY = (j - kX)//kernel_width
+                    currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
+                new_channel[x][y] = currPixel
+
+                print("I am at " + str(x) + ", " + str(y))
+
+        img_arr[q] = new_channel[zero_width:-zero_width, zero_height:-zero_height]
+
+    if(depth > 1):
+        filtered_image = np.stack((img_arr[0], img_arr[1], img_arr[2]), axis=2)
+    else:
+        filtered_image = img_arr[0]
     ##################
+    print(filtered_image.shape)
+    print(str(width) + " " + str(height))
 
     return filtered_image
+
+I = io.imread("./data/bird.bmp")
+img = np.full((320,640,3),255)
+plt.imshow(I)
+plt.show()
+currFilter = np.full((5,3),1/15)
+O = my_imfilter(I, currFilter)
+plt.imshow(O)
+plt.show()
+
 
 """
 EXTRA CREDIT placeholder function

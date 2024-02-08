@@ -177,6 +177,8 @@ Convolution is a type of image filtering that is a fundamental image processing 
         \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
+        The image convolution would require two inputs. The first would be the image, which here is the noisy Orion image. We would also need
+        a dimension for our median filter (which would have to be an odd integer).
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
@@ -187,7 +189,9 @@ Convolution is a type of image filtering that is a fundamental image processing 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
+        The image would be transformed by taking our original image and applying a 2D convolution. Pixel by pixel we would find a square with the specified
+        dimensions and use the median value in that square as the pixel's new value. For pixels that would be out of the image's bounds, we could use
+        reflection so we don't get a black border.
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
@@ -200,7 +204,8 @@ Convolution is a type of image filtering that is a fundamental image processing 
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
+        The output would be an image that looks like the input image without the noise. The larger our kernel's dimensions are, the less detail is preserved
+        but the smoother the overall output image is.
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
@@ -218,7 +223,9 @@ Describe two filter kernels that we may use with convolution, and give an exampl
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        One example of a filter kernal to be used with convolution is the Sobel filter. This allows us to do edge detection.
 
+        Another example of a filter kernel is the Gaussian filter. This allows us to blur an image while avoiding the artifacts of box filtering.
 
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 }}
@@ -232,7 +239,8 @@ What kind of filter might we use to de-noise our image of the Orion nebula, and 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
+        The median filter could be helpful in denoising this image. It takes the median value of a certain radius, which means noisy values would be replaced
+        by values that fit more in with the spaces around them. It also wouldn't end up as blurry as something like the mean filter would.
         
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -260,7 +268,10 @@ What kind of filter might we use to de-noise our image of the Orion nebula, and 
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
     \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+        Convolution is useful when it comes to modifying an existing image, and correlation is useful for finding images within images. Though 
+        convolution is the same as correlation when rotated by 180 degrees, they have very different algebraic properties.
+         Convolution is commutative, associative, and distributes over addition. Correlation has none of these. Convolution is 
+         very useful in Convolutional Neural Networks (hence the name).
         
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -283,14 +294,17 @@ What kind of filter might we use to de-noise our image of the Orion nebula, and 
     
 
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,breakable]
-    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/TODO_orig_img.png}\\
-    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/TODO_convolution_res.png}
-    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/TODO_correlation_res.png}
+    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/poor_nancy.png}\\
+    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/poor_nancy_conv.png}
+    \includegraphics[width=0.5\textwidth,height=7cm,keepaspectratio]{images/poor_nancy_corr.png}
     
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (b) here %%%%%% Remove this line in your answer! %%%%%%
+    The reason the convoluted and correlated images are different here is because of convolution and correlation moving in opposite
+    directions. The kernel for convolution is rotated 180 degrees from the kernel for correlation, and as the two
+     move in different directions the pixels that are weighted more are different, resulting in different images. One is finding edges
+     from the left, the other from the right.
     
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -324,7 +338,9 @@ Resized image & Depiction of original (\emph{not original file})
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (a) here %%%%%% Remove this line in your answer! %%%%%%
+    This is known as aliasing. This is the result of downsampling from our original image without using enough samples to accurately preserve the original 
+     signals. The way our downsampling sampled the original image meant that we sampled the image unevenly, resulting
+     in jagged edges.
 
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -339,7 +355,9 @@ Resized image & Depiction of original (\emph{not original file})
     \setbox0=\hbox{\parbox[t]{\textwidth}{
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    TODO: Your answer for (b) here %%%%%% Remove this line in your answer! %%%%%%
+    Filtering is the process by which we use enough samples to get accurate information on what the downsampled image should look like.
+     As we rescale, filtering uses a higher frequency of samples to pick what new pixels should be in the smaller image. This means that areas that aren't
+     jagged in the intial image won't be jagged in the final one.
 
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     }}
@@ -362,10 +380,9 @@ Which of the following kernels is high pass, low pass, or neither?
  \end{bmatrix}$
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black]
 %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TODO: Select the appropriate answer. %%%%%% Remove this line in your answer! %%%%%%
 
 \begin{tabular}[h]{ll}
-$\square$ & High pass \\
+$\blacksquare$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
@@ -386,7 +403,7 @@ TODO: Select the appropriate answer. %%%%%% Remove this line in your answer! %%%
 
 \begin{tabular}[h]{ll}
 $\square$ & High pass \\
-$\square$ & Low pass \\
+$\blacksquare$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
 
@@ -406,7 +423,7 @@ $\begin{bmatrix}
 TODO: Select the appropriate answer. %%%%%% Remove this line in your answer! %%%%%%
 
 \begin{tabular}[h]{ll}
-$\square$ & High pass \\
+$\blacksquare$ & High pass \\
 $\square$ & Low pass \\
 $\square$ & Neither \\
 \end{tabular}
@@ -434,7 +451,7 @@ TODO: Select the appropriate answer. %%%%%% Remove this line in your answer! %%%
 
 \begin{tabular}[h]{lc}
 $\square$ & High pass \\
-$\square$ & Low pass \\
+$\blacksquare$ & Low pass \\
 \end{tabular}
 %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{tcolorbox}
@@ -447,7 +464,7 @@ Output image 2 (adjusted for easier visualization):\\
 TODO: Select the appropriate answer. %%%%%% Remove this line in your answer! %%%%%%
 
 \begin{tabular}[h]{lc}
-$\square$ & High pass \\
+$\blacksquare$ & High pass \\
 $\square$ & Low pass \\
 \end{tabular}
 %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -465,9 +482,9 @@ Which of the following statements are true? (Check all that apply).
 TODO: Select all that apply. %%%%%% Remove this line in your answer! %%%%%%
 
 \begin{tabular}[h]{ll}
-$\square$ & High pass filter kernels will always contain at least one negative \\
+$\blacksquare$ & High pass filter kernels will always contain at least one negative \\
 & number \\
-$\square$ & A Gaussian filter is an example of a low pass filter \\
+$\blacksquare$ & A Gaussian filter is an example of a low pass filter \\
 $\square$ & A high pass filter is the basis for most smoothing methods \\
 $\square$ & In a high pass filter, the center of the kernel must have the highest \\ 
 & value \\
@@ -495,8 +512,11 @@ Grundberg stated that: ``In the future, readers of newspapers and magazines will
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,breakable]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-        
+        Grundberg's future will not come to pass.
+        People still trust photographs to be the truth.
+        This has lead to AI images that look like photographs to be mistaken as the truth, which is dangerous
+        but also only works if readers believe photographs to be true. Grundberg is 
+        more optimistic than I am, because he believes that society will accept the new truth of how images are created, and I believe we're going to be fooled as long as AI images still exist.
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-11\baselineskip\relax{} 0in 0pt}{\copy0}
@@ -504,13 +524,16 @@ Grundberg stated that: ``In the future, readers of newspapers and magazines will
 
 \item \textbf{[4 points]}
     \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-        For a news picture, are any digital manipulations permissible? If so, how do we decide which ones? Use at least one ethical framework from the \href{https://browncsci1430.github.io/resources/ethics_primer/}{ethics primer} to explore this. \textbf{[4--6 sentences]}
+        For a news picture, are digital manipulations fine? How do we decide which ones? Use one ethical framework from the \href{https://browncsci1430.github.io/resources/ethics_primer/}{ethics primer}. \textbf{[4--6 sentences]}
     \end{tcolorbox}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,breakable]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
         %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-        
+        With a utilitarian framework, digital manipulations are permissable if they do not alter the impact of the image.
+        The point of the news is to inform the viewer on what is going on in the world, and if the image
+        that makes it to print accurately represents the truth modification is fine. Touching up a celebrity or making an image more legible are fine.
+        However, ones that alter the meaning of the image (like removing protestors) are 
+        dishonest, as they get across an idea of the news that's incongruous with reality.
         %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }}
         \clipbox{0pt \dimexpr\dp0-11\baselineskip\relax{} 0in 0pt}{\copy0}
@@ -524,10 +547,8 @@ Grundberg stated that: ``In the future, readers of newspapers and magazines will
     \end{tcolorbox}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,breakable]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
-        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-        
-        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        If someone takes a photograph of a mountain range and posts it. No matter where it is on the internet, people will know who took it.
+        If someone scans an existing painting and that png is made with C2PA. We know that the photo is legitimate but we are not any closer to finding out the initial artist behind the painting.
         }}
         \clipbox{0pt \dimexpr\dp0-12\baselineskip\relax{} 0in 0pt}{\copy0}
     \end{tcolorbox}
@@ -539,10 +560,8 @@ Grundberg stated that: ``In the future, readers of newspapers and magazines will
     \end{tcolorbox}
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,breakable]
         \setbox0=\hbox{\parbox[t]{\textwidth}{
-        %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-        
-        %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Not really because most people are not going to take the time to see if an image is legitimate or not and default back to it being legit.
+        An image could also be screenshotted and then have that screenshot be enclosed with a C2PA wrapper (unless I'm misunderstanding how this works), which would disrupt finding out who made the image.
         }}
         \clipbox{0pt \dimexpr\dp0-12\baselineskip\relax{} 0in 0pt}{\copy0}
     \end{tcolorbox}
@@ -576,7 +595,9 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = np.zeros((320,640))
+    print(np.shape(img))
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -590,7 +611,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    imgOut = np.zeros((1,1,320,640))
+    img_fixed = np.squeeze(imgOut)
+    print(np.shape(img_fixed))
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -605,7 +629,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
 \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = np.zeros((320,640))
+    img_expanded = np.expand_dims(img, axis=0)
+    print(np.shape(img_expanded))
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -618,7 +645,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = [[-1,1],[-1,1]]
+    img = np.clip(img, -0.5,0.5)
+    print(img)
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -631,7 +661,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = np.zeros((320,640,3))
+    img = img[:,:,:2]
+    print(img.shape)
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -646,7 +679,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = np.zeros((320,640,3))
+    img = img[:,:,0:3:2]
+    print(img.shape)
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
@@ -660,7 +696,10 @@ Use operators like \texttt{[]} and \texttt{:}, but remember that each prompt can
     \begin{tcolorbox}[colback=white!5!white,colframe=green!75!black,height=2cm]
     %%%%%%% ANSWER STARTS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{python}
-    # TODO: Your expression here
+    import numpy as np
+    img = np.full((320,640,3),255)
+    img = np.pad(img,((2,2),(3,3),(0,0)), 'constant')
+    print(img.shape)
     \end{python}
     %%%%%%% ANSWER ENDS HERE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{tcolorbox}
