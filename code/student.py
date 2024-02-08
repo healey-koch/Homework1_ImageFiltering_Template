@@ -39,6 +39,8 @@ def my_imfilter(image, kernel):
     else:
         width, height = image.shape
         depth = 1
+    print("width " + str(width))
+    print("height " + str(height))
 
     print("1")
     filtered_image = np.zeros(image.shape)
@@ -58,16 +60,19 @@ def my_imfilter(image, kernel):
     kernel_height = len(kernel[0])  
     zero_width = (kernel_width - 1) // 2
     zero_height = (kernel_height - 1) // 2
-    print("kernel_width is " + str(kernel_width) + " and height is " + str(kernel_height))
+    print("zero_width is " + str(zero_width) + " and height is " + str(zero_height))
+    print("width is "+ str(width) +" height is " + str(height))
     ##################
     # Your code here #
 
     for q in range(depth):
+        print(str(q) + " / " + str(depth))
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
         print(new_channel.shape)
         
         for d in range(width * height):
+            #print(str(d) + " / " + str(width * height))
             x,y = index_to_pixel(d,width)
             currPixel = 0
             for j in range(kernel_height * kernel_width):
@@ -78,7 +83,8 @@ def my_imfilter(image, kernel):
         print("!!!!!!")
         print(new_channel.shape)
         if(zero_width > 1 or zero_height > 1):
-            img_arr[q] = new_channel[zero_width:-zero_width, zero_height:-zero_height]
+            print("start transfer is at " + str(zero_width) + " and end transfer is " + str(width-zero_width))
+            img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
         else:
             img_arr[q] = new_channel
         print(img_arr[q].shape)
@@ -96,20 +102,21 @@ def my_imfilter(image, kernel):
     #print(str(width) + " " + str(height))
     print("4")
     return filtered_image
-"""
-I = io.imread("./data/bird.bmp")
-img = np.full((320,640,3),255)
-#plt.imshow(I)
-#plt.show()
-currFilter = np.full((1,1),1)
-O = my_imfilter(I, currFilter)
-print("5")
-print(O.shape)
-plt.imshow(O)
-print("6")
-plt.show()
-print("7")
-"""
+def doShit():
+    I = io.imread("./data/plane.bmp")
+    plt.imshow(I)
+    plt.show()
+    currFilter = np.full((7,7),0)
+    currFilter[3][3] = 1
+    O = my_imfilter(I, currFilter)
+    print("5")
+    print(O.shape)
+    plt.imshow(O)
+    print("6")
+    plt.show()
+    print("7")
+
+doShit()
 
 """
 EXTRA CREDIT placeholder function
