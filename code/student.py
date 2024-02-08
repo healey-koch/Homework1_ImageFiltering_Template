@@ -50,7 +50,7 @@ def my_imfilter(image, kernel):
         img_arr.append(image)
     
 
-    if ((len(kernel) % 2 == 0) or (len(kernel[0]) % 2 == 0)) :
+    if ((len(kernel) % 2 == 0) or (len(kernel[1]) % 2 == 0)) :
         raise Exception("Sorry, kernel cannot have any even dimensions!")
     kernel_width = len(kernel)
     kernel_height = len(kernel[0])  
@@ -84,7 +84,7 @@ def my_imfilter(image, kernel):
     print(str(width) + " " + str(height))
 
     return filtered_image
-
+"""
 I = io.imread("./data/bird.bmp")
 img = np.full((320,640,3),255)
 plt.imshow(I)
@@ -93,7 +93,7 @@ currFilter = np.full((1,1),15)
 O = my_imfilter(I, currFilter)
 plt.imshow(O)
 plt.show()
-#"""
+"""
 
 """
 EXTRA CREDIT placeholder function
