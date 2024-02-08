@@ -33,7 +33,12 @@ def my_imfilter(image, kernel):
     Errors if:
     - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
     """
-    width, height, depth = image.shape
+    print(len(image.shape))
+    if(len(image.shape) > 2):
+        width, height, depth = image.shape
+    else:
+        width, height = image.shape
+        depth = 1
     filtered_image = np.zeros(image.shape)
     print(image.shape)
     img_arr = list(())
@@ -79,7 +84,7 @@ def my_imfilter(image, kernel):
     print(str(width) + " " + str(height))
 
     return filtered_image
-"""
+
 I = io.imread("./data/bird.bmp")
 img = np.full((320,640,3),255)
 plt.imshow(I)
@@ -88,7 +93,7 @@ currFilter = np.full((5,3),1/15)
 O = my_imfilter(I, currFilter)
 plt.imshow(O)
 plt.show()
-"""
+#"""
 
 """
 EXTRA CREDIT placeholder function
@@ -143,15 +148,29 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
 
     # Your code here
     low_frequencies = my_imfilter(image1, kernel)# Replace with your implementation
+    print("low")
 
     # (2) Remove the low frequencies from image2. The easiest way to do this is to
     #     subtract a blurred version of image2 from the original version of image2.
     #     This will give you an image centered at zero with negative values.
     # Your code here #
     high_frequencies = np.subtract(image2, my_imfilter(image2, kernel)) # Replace with your implementation
+    print("high")
 
     # (3) Combine the high frequencies and low frequencies, and make sure the hybrid image values are within the range 0.0 to 1.0
     # Your code here
     hybrid_image = np.add(low_frequencies,high_frequencies)# # Replace with your implementation
+    print("hybrid")
 
     return low_frequencies, high_frequencies, hybrid_image
+"""
+image1 = io.imread("./data/gokuSmall.png")
+print(image1.shape)
+image2 = io.imread("./data/hatsunemikuSmall.png")
+print(image2.shape)
+cutoff_frequency = 7
+low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
+        image1, image2, cutoff_frequency)
+plt.imshow(hybrid_image)
+plt.show()
+"""
