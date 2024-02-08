@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 def pad_image(image, width_padding, height_padding):
     img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'constant')
-    print(img.shape)
+    #print(img.shape)
     return img
 
 def index_to_pixel(index, width):
@@ -33,14 +33,16 @@ def my_imfilter(image, kernel):
     Errors if:
     - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
     """
-    print(len(image.shape))
+    #print(len(image.shape))
     if(len(image.shape) > 2):
         width, height, depth = image.shape
     else:
         width, height = image.shape
         depth = 1
+
+    print("1")
     filtered_image = np.zeros(image.shape)
-    print(image.shape)
+    #print(image.shape)
     img_arr = list(())
     if(depth > 1):
         for i in range(depth):
@@ -50,19 +52,20 @@ def my_imfilter(image, kernel):
         img_arr.append(image)
     
 
-    if ((len(kernel) % 2 == 0) or (len(kernel[1]) % 2 == 0)) :
+    if ((len(kernel) % 2 == 0) or (len(kernel[0]) % 2 == 0)) :
         raise Exception("Sorry, kernel cannot have any even dimensions!")
     kernel_width = len(kernel)
     kernel_height = len(kernel[0])  
     zero_width = (kernel_width - 1) // 2
     zero_height = (kernel_height - 1) // 2
-
+    print("kernel_width is " + str(kernel_width) + " and height is " + str(kernel_height))
     ##################
     # Your code here #
 
     for q in range(depth):
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
+        print(new_channel.shape)
         
         for d in range(width * height):
             x,y = index_to_pixel(d,width)
@@ -72,27 +75,40 @@ def my_imfilter(image, kernel):
                 kY = (j - kX)//kernel_width
                 currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
             new_channel[x][y] = currPixel
+        print("!!!!!!")
+        print(new_channel.shape)
+        if(zero_width > 1 or zero_height > 1):
+            img_arr[q] = new_channel[zero_width:-zero_width, zero_height:-zero_height]
+        else:
+            img_arr[q] = new_channel
+        print(img_arr[q].shape)
+        print("!!!!!")
+    print("3")
 
-        img_arr[q] = new_channel[zero_width:-zero_width, zero_height:-zero_height]
-
+    print(img_arr[0].shape)
     if(depth > 1):
         filtered_image = np.stack(img_arr, axis=2)
     else:
         filtered_image = img_arr[0]
-    ##################
     print(filtered_image.shape)
-    print(str(width) + " " + str(height))
-
+    ##################
+    #print(filtered_image.shape)
+    #print(str(width) + " " + str(height))
+    print("4")
     return filtered_image
 """
 I = io.imread("./data/bird.bmp")
 img = np.full((320,640,3),255)
-plt.imshow(I)
-plt.show()
-currFilter = np.full((1,1),15)
+#plt.imshow(I)
+#plt.show()
+currFilter = np.full((1,1),1)
 O = my_imfilter(I, currFilter)
+print("5")
+print(O.shape)
 plt.imshow(O)
+print("6")
 plt.show()
+print("7")
 """
 
 """
