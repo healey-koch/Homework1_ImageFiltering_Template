@@ -20,7 +20,7 @@ def filter_test(img_path):
         os.mkdir(resultsDir)
 
     test_image = load_image(img_path)
-    test_image = rescale(test_image, 0.7, mode='reflect')#, multichannel=True)
+    test_image = rescale(test_image, 0.7, mode='reflect', multichannel=True)
 
     '''
     Identity filter

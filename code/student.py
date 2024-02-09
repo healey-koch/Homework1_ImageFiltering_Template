@@ -39,10 +39,7 @@ def my_imfilter(image, kernel):
     else:
         width, height = image.shape
         depth = 1
-    print("width " + str(width))
-    print("height " + str(height))
-
-    print("1")
+    print(image.shape)
     filtered_image = np.zeros(image.shape)
     #print(image.shape)
     img_arr = list(())
@@ -61,7 +58,6 @@ def my_imfilter(image, kernel):
     zero_width = (kernel_width - 1) // 2
     zero_height = (kernel_height - 1) // 2
     print("zero_width is " + str(zero_width) + " and height is " + str(zero_height))
-    print("width is "+ str(width) +" height is " + str(height))
     ##################
     # Your code here #
 
@@ -69,7 +65,7 @@ def my_imfilter(image, kernel):
         print(str(q) + " / " + str(depth))
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
-        print(new_channel.shape)
+        #print(new_channel.shape)
         
         for d in range(width * height):
             #print(str(d) + " / " + str(width * height))
@@ -80,16 +76,14 @@ def my_imfilter(image, kernel):
                 kY = (j - kX)//kernel_width
                 currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
             new_channel[x][y] = currPixel
-        print("!!!!!!")
-        print(new_channel.shape)
-        if(zero_width > 1 or zero_height > 1):
+        #print("!!!!!!")
+        #print(new_channel.shape)
+        if(zero_width > 0 or zero_height > 0):
             print("start transfer is at " + str(zero_width) + " and end transfer is " + str(width-zero_width))
             img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
         else:
+
             img_arr[q] = new_channel
-        print(img_arr[q].shape)
-        print("!!!!!")
-    print("3")
 
     print(img_arr[0].shape)
     if(depth > 1):
@@ -103,20 +97,14 @@ def my_imfilter(image, kernel):
     print("4")
     return filtered_image
 def doShit():
-    I = io.imread("./data/plane.bmp")
-    plt.imshow(I)
+    test_image = io.imread("./data/dog.bmp")
+    identity_filter = np.asarray(
+        [[0, 0, 0], [0, 1, 0], [0, 0, 0]], dtype=np.float32)
+    identity_image = my_imfilter(test_image, identity_filter)
+    plt.imshow(identity_image, cmap='gray')
     plt.show()
-    currFilter = np.full((7,7),0)
-    currFilter[3][3] = 1
-    O = my_imfilter(I, currFilter)
-    print("5")
-    print(O.shape)
-    plt.imshow(O)
-    print("6")
-    plt.show()
-    print("7")
 
-doShit()
+#doShit()
 
 """
 EXTRA CREDIT placeholder function
@@ -182,18 +170,20 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
 
     # (3) Combine the high frequencies and low frequencies, and make sure the hybrid image values are within the range 0.0 to 1.0
     # Your code here
-    hybrid_image = np.add(low_frequencies,high_frequencies)# # Replace with your implementation
+    hybrid_image = (low_frequencies + high_frequencies)# # Replace with your implementation
+    hybrid_image = np.clip(hybrid_image,0,255)
     print("hybrid")
 
     return low_frequencies, high_frequencies, hybrid_image
 """
-image1 = io.imread("./data/gokuSmall.png")
+image1 = io.imread("./data/gokuSmall.bmp")
 print(image1.shape)
-image2 = io.imread("./data/hatsunemikuSmall.png")
+image2 = io.imread("./data/hatsunemikuSmall.bmp")
 print(image2.shape)
-cutoff_frequency = 7
+cutoff_frequency = 1
 low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
         image1, image2, cutoff_frequency)
+print(hybrid_image)
 plt.imshow(hybrid_image)
 plt.show()
 """
