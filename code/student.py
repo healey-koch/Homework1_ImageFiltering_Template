@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 
 def pad_image(image, width_padding, height_padding):
     img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'constant')
-    #print(img.shape)
     return img
 
 def index_to_pixel(index, width):
@@ -39,25 +38,25 @@ def my_imfilter(image, kernel):
     img_arr = list(())
 
     if(len(image.shape) > 2):       #if the image is RGB
-        height, width, depth = image.shape
+        width, height, depth = image.shape
         for i in range(depth):
             curr_channel = image[:,:,i]
             img_arr.append(curr_channel)
     else:                           #if the image is BW
-        height, width = image.shape
+        width, height = image.shape
         depth = 1
         img_arr.append(image)
 
-    zero_width = len(kernel[0]) // 2 #half of the kernel's width
-    zero_height = len(kernel) // 2   #half of the kernel's height
+    zero_width = len(kernel) // 2 #half of the kernel's width
+    zero_height = len(kernel[0]) // 2   #half of the kernel's height
     
     for q in range(depth):
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
         for y in range(zero_height,height + zero_height):
             for x in range(zero_width, width + zero_width):
-                new_channel[y][x] = np.sum(np.multiply(curr_channel[y - zero_height: y + 1 + zero_height, x-zero_width : x + 1 + zero_width], kernel))
-        img_arr[q] = new_channel[zero_height:height + zero_height,zero_width:width + zero_width]
+                new_channel[x][y] = np.sum(np.multiply(curr_channel[x-zero_width : x + 1 + zero_width, y - zero_height: y + 1 + zero_height], kernel))
+        img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
 
 
     if (depth > 1):
@@ -67,12 +66,12 @@ def my_imfilter(image, kernel):
 
 def doShit():
     test_image = io.imread("./data/marilyn_gray.bmp")
-    print(test_image.shape)
     identity_filter = np.asarray(
-        [[0, 0, 0], [0, 1, 0], [0, 0, 0]], dtype=np.float32)
-    identity_image = my_imfilter(test_image, identity_filter)
-    print(identity_image.shape)
-    plt.imshow(identity_image, cmap='gray')
+        [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], dtype=np.float32)
+    #identity_filter = np.full((5,5),1/25)
+    image = my_imfilter(test_image, identity_filter)
+    sobel_image = np.clip(image+127, 0.0, 255)
+    plt.imshow(sobel_image, cmap='gray')
     plt.show()
 
 """
@@ -152,7 +151,6 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
 def hybrid():
     image1 = io.imread("./data/gokuSmall.bmp")
     image2 = io.imread("./data/hatsunemikuSmall.bmp")
-    print(image2)
     cutoff_frequency = 7
     low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
             image1, image2, cutoff_frequency)
