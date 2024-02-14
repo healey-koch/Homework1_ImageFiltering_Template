@@ -165,4 +165,4 @@ def hybrid():
     plt.show()
 
 #hybrid()
-doShit()
+#doShit()
