@@ -39,24 +39,24 @@ def my_imfilter(image, kernel):
     img_arr = list(())
 
     if(len(image.shape) > 2):       #if the image is RGB
-        width, height, depth = image.shape
+        height, width, depth = image.shape
         for i in range(depth):
             curr_channel = image[:,:,i]
             img_arr.append(curr_channel)
     else:                           #if the image is BW
-        width, height = image.shape
+        height, width = image.shape
         depth = 1
         img_arr.append(image)
 
-    zero_width = len(kernel) // 2 #half of the kernel's width
-    zero_height = len(kernel[0]) // 2   #half of the kernel's height
+    zero_width = len(kernel[0]) // 2 #half of the kernel's width
+    zero_height = len(kernel) // 2   #half of the kernel's height
     
     for q in range(depth):
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
         for y in range(zero_height,height + zero_height):
             for x in range(zero_width, width + zero_width):
-                new_channel[x][y] = np.sum(np.multiply(curr_channel[x-zero_width : x + 1 + zero_width, y - zero_height: y + 1 + zero_height], kernel))
+                new_channel[y][x] = np.sum(np.multiply(curr_channel[y - zero_height: y + 1 + zero_height, x-zero_width : x + 1 + zero_width], kernel))
         img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
 
 
@@ -165,3 +165,4 @@ def hybrid():
     plt.show()
 
 #hybrid()
+doShit()
