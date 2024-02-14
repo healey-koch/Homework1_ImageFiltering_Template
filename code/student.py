@@ -33,6 +33,7 @@ def my_imfilter(image, kernel):
     Errors if:
     - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
     """
+    kernel = np.rot90(kernel,2)
 
     if ((len(kernel) % 2 == 0) or (len(kernel[0]) % 2 == 0)) :
         raise Exception("Sorry, kernel cannot have any even dimensions!")
