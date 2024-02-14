@@ -62,9 +62,10 @@ def my_imfilter(image, kernel):
 
 
     if (depth > 1):
-        return (np.clip(np.stack(img_arr, axis=2),0,255))
+        #return (np.clip(np.stack(img_arr, axis=2),0,255))
+        return np.stack(img_arr, axis=2)
     else:
-        return (np.clip(img_arr[0],0,255))
+        return img_arr[0]
 
 def doShit(kernel):
     test_image = io.imread("./data/marilyn_gray.bmp")
