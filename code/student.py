@@ -33,78 +33,41 @@ def my_imfilter(image, kernel):
     Errors if:
     - filter/kernel has any even dimension -> raise an Exception with a suitable error message.
     """
-    #print(len(image.shape))
-    if(len(image.shape) > 2):
-        width, height, depth = image.shape
-    else:
-        width, height = image.shape
-        depth = 1
-    print(image.shape)
-    filtered_image = np.zeros(image.shape)
-    #print(image.shape)
-    img_arr = list(())
-    if(depth > 1):
-        for i in range(depth):
-            curr_channel = image[:,:,i]
-            img_arr.append(curr_channel)
-    else:
-        img_arr.append(image)
-    
 
     if ((len(kernel) % 2 == 0) or (len(kernel[0]) % 2 == 0)) :
         raise Exception("Sorry, kernel cannot have any even dimensions!")
-    kernel_width = len(kernel)
-    kernel_height = len(kernel[0])  
-    zero_width = (kernel_width - 1) // 2
-    zero_height = (kernel_height - 1) // 2
-    print("zero_width is " + str(zero_width) + " and height is " + str(zero_height))
-    ##################
-    # Your code here #
+    img_arr = list(())
 
+    if(len(image.shape) > 2):       #if the image is RGB
+        width, height, depth = image.shape
+        for i in range(depth):
+            curr_channel = image[:,:,i]
+            img_arr.append(curr_channel)
+    else:                           #if the image is BW
+        width, height = image.shape
+        depth = 1
+        img_arr.append(image)
+
+    zero_width = len(kernel) // 2 #half of the kernel's width
+    zero_height = len(kernel[0]) // 2   #half of the kernel's height
+    
     for q in range(depth):
-        print(str(q) + " / " + str(depth))
         curr_channel = pad_image(img_arr[q],zero_width,zero_height)
         new_channel = curr_channel.copy()
-        #print(new_channel.shape)
-        
-        for d in range(width * height):
-            #print(str(d) + " / " + str(width * height))
-            x,y = index_to_pixel(d,width)
-            currPixel = 0
-            for j in range(kernel_height * kernel_width):
-                kX = j % kernel_width
-                kY = (j - kX)//kernel_width
-                currPixel += curr_channel[x + kX - zero_width][y + kY - zero_height] * kernel[kX][kY]
-            new_channel[x][y] = currPixel
-        #print("!!!!!!")
-        #print(new_channel.shape)
-        if(zero_width > 0 or zero_height > 0):
-            print("start transfer is at " + str(zero_width) + " and end transfer is " + str(width-zero_width))
-            img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
-        else:
+        for y in range(zero_height,height + zero_height):
+            for x in range(zero_width, width + zero_width):
+                new_channel[x][y] = np.sum(np.multiply(curr_channel[x-zero_width : x + 1 + zero_width, y - zero_height: y + 1 + zero_height], kernel))
+        img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
+    
+    return np.clip(np.stack(img_arr, axis=2),0,255)
 
-            img_arr[q] = new_channel
-
-    print(img_arr[0].shape)
-    if(depth > 1):
-        filtered_image = np.stack(img_arr, axis=2)
-    else:
-        filtered_image = img_arr[0]
-    print(filtered_image.shape)
-    ##################
-    #print(filtered_image.shape)
-    #print(str(width) + " " + str(height))
-    print("4")
-    return filtered_image
 def doShit():
-    test_image = io.imread("./data/dog.bmp")
+    test_image = io.imread("./data/marilyn_gray.bmp")
     identity_filter = np.asarray(
         [[0, 0, 0], [0, 1, 0], [0, 0, 0]], dtype=np.float32)
     identity_image = my_imfilter(test_image, identity_filter)
     plt.imshow(identity_image, cmap='gray')
     plt.show()
-
-#doShit()
 
 """
 EXTRA CREDIT placeholder function
@@ -165,25 +128,36 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     #     subtract a blurred version of image2 from the original version of image2.
     #     This will give you an image centered at zero with negative values.
     # Your code here #
-    high_frequencies = np.subtract(image2, my_imfilter(image2, kernel)) # Replace with your implementation
+
+    
+
+    high_frequencies = np.clip(np.subtract(image2, my_imfilter(image2, kernel)), 0, 255) # Replace with your implementation
     print("high")
+
+    
 
     # (3) Combine the high frequencies and low frequencies, and make sure the hybrid image values are within the range 0.0 to 1.0
     # Your code here
-    hybrid_image = (low_frequencies + high_frequencies)# # Replace with your implementation
-    hybrid_image = np.clip(hybrid_image,0,255)
+    hybrid_image = np.add(low_frequencies,high_frequencies)# # Replace with your implementation
+    #hybrid_image = np.clip(hybrid_image,0,255)
     print("hybrid")
 
     return low_frequencies, high_frequencies, hybrid_image
-"""
-image1 = io.imread("./data/gokuSmall.bmp")
-print(image1.shape)
-image2 = io.imread("./data/hatsunemikuSmall.bmp")
-print(image2.shape)
-cutoff_frequency = 1
-low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
-        image1, image2, cutoff_frequency)
-print(hybrid_image)
-plt.imshow(hybrid_image)
-plt.show()
-"""
+def hybrid():
+    image1 = io.imread("./data/gokuSmall.bmp")
+    image2 = io.imread("./data/hatsunemikuSmall.bmp")
+    print(image2)
+    cutoff_frequency = 7
+    low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
+            image1, image2, cutoff_frequency)
+    #print("low freq is " + str(low_frequencies[140][25]))
+    #print("high freq is " + str(high_frequencies[140][25]))
+    #print("hybrid is " + str(hybrid_image[140][25]))
+    plt.imshow(low_frequencies)
+    plt.show()
+    plt.imshow(high_frequencies)
+    plt.show()
+    plt.imshow(hybrid_image)
+    plt.show()
+
+#hybrid()
