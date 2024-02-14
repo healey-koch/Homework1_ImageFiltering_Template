@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from helpers import vis_hybrid_image, load_image, save_image, equalize_image_sizes
 
 def pad_image(image, width_padding, height_padding):
-    img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'constant')
+    img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'reflect')
     return img
 
 def index_to_pixel(index, width):
