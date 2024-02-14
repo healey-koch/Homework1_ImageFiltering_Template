@@ -7,6 +7,7 @@ from numpy import pi, exp, sqrt
 from skimage import io, img_as_ubyte, img_as_float32
 from skimage.transform import rescale
 import matplotlib.pyplot as plt
+from helpers import vis_hybrid_image, load_image, save_image, equalize_image_sizes
 
 def pad_image(image, width_padding, height_padding):
     img = np.pad(image,((width_padding,width_padding),(height_padding,height_padding)), 'constant')
@@ -60,16 +61,14 @@ def my_imfilter(image, kernel):
 
 
     if (depth > 1):
-        return np.clip(np.stack(img_arr, axis=2),0,255)
+        return (np.clip(np.stack(img_arr, axis=2),0,255))
     else:
-        return np.clip(img_arr[0],0,255)
+        return (np.clip(img_arr[0],0,255))
 
-def doShit():
+def doShit(kernel):
     test_image = io.imread("./data/marilyn_gray.bmp")
-    identity_filter = np.asarray(
-        [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], dtype=np.float32)
     #identity_filter = np.full((5,5),1/25)
-    image = my_imfilter(test_image, identity_filter)
+    image = my_imfilter(test_image, kernel)
     sobel_image = np.clip(image+127, 0.0, 255)
     plt.imshow(sobel_image, cmap='gray')
     plt.show()
@@ -136,7 +135,7 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
 
     
 
-    high_frequencies = np.clip(np.subtract(image2, my_imfilter(image2, kernel)), 0, 255) # Replace with your implementation
+    high_frequencies = np.subtract(image2, my_imfilter(image2, kernel))# Replace with your implementation
     print("high")
 
     
@@ -150,19 +149,25 @@ def gen_hybrid_image(image1, image2, cutoff_frequency):
     return low_frequencies, high_frequencies, hybrid_image
 def hybrid():
     image1 = io.imread("./data/gokuSmall.bmp")
+    print(image1.shape)
     image2 = io.imread("./data/hatsunemikuSmall.bmp")
+    print(image2.shape)
     cutoff_frequency = 7
     low_frequencies, high_frequencies, hybrid_image = gen_hybrid_image(
             image1, image2, cutoff_frequency)
     #print("low freq is " + str(low_frequencies[140][25]))
-    #print("high freq is " + str(high_frequencies[140][25]))
     #print("hybrid is " + str(hybrid_image[140][25]))
     plt.imshow(low_frequencies)
     plt.show()
     plt.imshow(high_frequencies)
     plt.show()
-    plt.imshow(hybrid_image)
+    print(hybrid_image.shape)
+    plt.imshow(vis_hybrid_image(hybrid_image))
     plt.show()
 
 #hybrid()
-#doShit()
+kern = np.asarray(
+        [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], dtype=np.float32)
+
+#doShit(kern)
+#doShit(np.flip(kern))

@@ -127,78 +127,64 @@ YES $\square$ NO $\blacksquare$ % change answer to \blacksquare
 
 \section*{Assignment Overview}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. See Equation~\ref{eq:one}.
-
-\begin{equation}
-a = b + c
-\label{eq:one}
-\end{equation}
+The assignment was to program an image filter that takes in an image and a kernel and produces a modified final image, in our case a hybrid image that merged two images into a final image
+that combined the low frequencies of one and the high frequencies of the other.
 
 \section*{Implementation Detail}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I created a convolution function that takes in an image and runs convolution on all of its channels (works the same for RGB and BW). It then stacks the channels back up into the shape
+of the original image. It pads the images using zeroes. Numpy.multiply and numpy.sum was used to get the new value for each pixel.
 
-My code snippet highlights an interesting point.
-\begin{python}
-one = 1;
-two = one + one;
-if two == 2
-    disp( 'This computer is not broken.' );
-end
-\end{python}
+Hybrid image uses this convolution function to create a low pass image and a high pass image and then adds them together. Nothing too interesting happened there.
 
 \section*{Result}
 
 \begin{enumerate}
-    \item Result 1 was a total failure, because...
-    \item Result 2 (Figure~\ref{fig:result1}, left) was surprising, because...
-    \item Result 3 (Figure~\ref{fig:result1}, right) blew my socks off, because...
+    \item Behold my beasts...
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{lowpassBike.png}
+        \includegraphics[width=5cm]{highpassBird.png}
+        \includegraphics[width=5cm]{birdCycle.png}
+        \caption{Combination of a bike and a bird.}
+        \label{fig:result1}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{lowpassEin.png}
+        \includegraphics[width=5cm]{highpassFish.png}
+        \includegraphics[width=5cm]{fishStein.png}
+        \caption{Combination of Einstein and a fish.}
+        \label{fig:result2}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{lowpassDog.png}
+        \includegraphics[width=5cm]{highpassCat.png}
+        \includegraphics[width=5cm]{catDog.png}
+        \caption{Combination of a dog and a cat.}
+        \label{fig:result3}
+    \end{figure}
+
 \end{enumerate}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=5cm]{placeholder.jpg}
-    \includegraphics[width=5cm]{placeholder.jpg}
-    \caption{\emph{Left:} My result was spectacular. \emph{Right:} Curious.}
-    \label{fig:result1}
-\end{figure}
-
-My results are summarized in Table~\ref{tab:table1}.
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{lr}
-        \toprule
-        Condition & Time (seconds) \\
-        \midrule
-        Test 1 & 1 \\
-        Test 2 & 1000 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Stunning revelation about the efficiency of my code.}
-    \label{tab:table1}
-\end{table}
 
 \section*{Extra Credit (Optional)}
 \begin{enumerate}
    
-    \item Implementation A, code snippets, and results
-        \begin{python}
-        one = 1;
-        two = one + one;
-        if two == 2
-            disp( 'This computer is not broken.' );
-        end
-        \end{python}
-    
-    \item Implementation B, code snippets, and results
-        \begin{python}
-        one = 1;
-        two = one + one;
-        if two == 2
-            disp( 'This computer is not broken.' );
-        end
-        \end{python}
+    \item I formed a hybrid from two images not in the code database: You Know I Had To Do It To Em, and a face from Detective Pikachu.
+        
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=5cm]{lowpassDoit.png}
+        \includegraphics[width=5cm]{highpassPika.png}
+        \includegraphics[width=8cm]{splitPika.png}
+        \caption{The aforementioned beast.}
+        \label{fig:result4}
+    \end{figure}
+
 \end{enumerate}
 
 \end{document}
