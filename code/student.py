@@ -58,8 +58,12 @@ def my_imfilter(image, kernel):
             for x in range(zero_width, width + zero_width):
                 new_channel[x][y] = np.sum(np.multiply(curr_channel[x-zero_width : x + 1 + zero_width, y - zero_height: y + 1 + zero_height], kernel))
         img_arr[q] = new_channel[zero_width:width + zero_width, zero_height:height + zero_height]
-    
-    return np.clip(np.stack(img_arr, axis=2),0,255)
+
+
+    if (depth > 1):
+        return np.clip(np.stack(img_arr, axis=2),0,255)
+    else:
+        return np.clip(img_arr[0],0,255)
 
 def doShit():
     test_image = io.imread("./data/marilyn_gray.bmp")
